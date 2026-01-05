@@ -116,7 +116,14 @@
     <div id="page-wrapper">
       <!-- Header -->
       <header id="header">
-        <h1><a href="index.html">NAIA</a></h1>
+        <h1>
+          <a href="index.html"
+            ><img
+              src="images/LOGO_WEB.png"
+              alt="NAIA Logo"
+              style="height: 120px; width: auto"
+          /></a>
+        </h1>
         <nav id="nav">
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -289,13 +296,13 @@
 
           if (response.ok) {
             successMessage.textContent =
-              "Registrierung erfolgreich! Du wirst zum Login weitergeleitet...";
+              "Registrierung erfolgreich! 📧 Bitte überprüfe dein Email-Postfach zur Bestätigung.";
             successMessage.style.display = "block";
 
-            // Nach 2 Sekunden zum Login redirecten
+            // Nach 3 Sekunden zum Login redirecten
             setTimeout(() => {
               window.location.href = "login.html";
-            }, 2000);
+            }, 3000);
           } else {
             showError("email", data.message || "Registrierung fehlgeschlagen");
           }

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://naia-waschmaschinen.de/sitemap.xml
+
+# Crawl-Verzögerung zur Schonung des Servers
+Crawl-delay: 1

@@ -15,13 +15,41 @@ npm install
 
 ### 3. .env Datei erstellen
 
-Erstelle eine `.env` Datei im `server` Verzeichnis:
+Kopiere `.env.example` zu `.env` und fülle die Werte aus:
+
+```bash
+cp .env.example .env
+```
+
+Bearbeite dann die `.env` Datei:
 
 ```
 PORT=5000
 JWT_SECRET=dein-geheim-schluessel-hier-aendern
 NODE_ENV=development
+
+# Email-Konfiguration (z.B. Gmail)
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_SECURE=false
+EMAIL_USER=deine-email@gmail.com
+EMAIL_PASSWORD=dein-app-passwort
 ```
+
+#### Email mit Gmail einrichten:
+
+1. **App-Passwort erstellen:**
+
+   - Gehe zu https://myaccount.google.com
+   - Wähle "Sicherheit" > "App-Passwörter"
+   - Wähle "Mail" und "Windows-Computer"
+   - Kopiere das 16-stellige Passwort
+
+2. **In .env einfügen:**
+   ```
+   EMAIL_USER=deine-email@gmail.com
+   EMAIL_PASSWORD=nnnn nnnn nnnn nnnn
+   ```
 
 > **WICHTIG:** In Produktion einen starken, zufälligen JWT_SECRET verwenden!
 
@@ -69,8 +97,28 @@ Content-Type: application/json
 
 Response (201):
 {
-  "message": "Registrierung erfolgreich"
+  "message": "Registrierung erfolgreich! Bitte überprüfe dein Email-Postfach zur Bestätigung."
 }
+```
+
+**Nach dem Signup:**
+
+- Eine Bestätigungs-Email wird versendet
+- Der Nutzer muss auf den Link in der Email klicken
+- Erst danach kann er sich einloggen
+
+#### 2. Email bestätigen (automatisch via Link)
+
+```
+GET /api/auth/verify-email/:token
+
+Response: HTML-Seite mit Bestätigung + Auto-Redirect zum Login nach 5 Sekunden
+```
+
+#### 3. Anmeldung (Login)
+
+```
+POST /api/auth/login
 ```
 
 #### 2. Anmeldung (Login)
@@ -124,13 +172,16 @@ naia-waschmaschinen/
 │   ├── server.js              # Express Server
 │   ├── config.js              # Konfiguration
 │   ├── database.js            # SQLite Datenbank Setup
+│   ├── utils/
+│   │   └── email.js           # Email-Service (Bestätigung & Reset)
 │   ├── routes/
-│   │   └── auth.js            # Auth-Endpoints (Signup, Login, Profile)
+│   │   └── auth.js            # Auth-Endpoints
 │   ├── package.json           # Dependencies
 │   ├── .env                   # Umgebungsvariablen (lokal)
+│   ├── .env.example           # Template für .env
 │   └── database.db            # SQLite Datenbank (wird auto-erstellt)
 ├── login.html                 # Login-Seite
-├── signup.html                # Signup-Seite
+├── signup.html                # Signup-Seite (mit Email-Bestätigung)
 ├── dashboard.html             # Benutzer-Dashboard
 ├── index.html                 # Homepage
 └── ...
@@ -143,6 +194,7 @@ naia-waschmaschinen/
 ✅ **Passwort-Hashing:** bcryptjs (10 Salt-Runden)  
 ✅ **JWT Tokens:** 7 Tage Gültigkeitsdauer  
 ✅ **Token-Verifizierung:** Bei geschützten Endpoints  
+✅ **Email-Bestätigung:** Verifizierungslink vor Login erforderlich  
 ✅ **CORS:** Aktiviert für sichere Cross-Origin-Requests  
 ✅ **Input-Validierung:** Auf Server- und Client-Seite
 
@@ -150,7 +202,7 @@ naia-waschmaschinen/
 
 ## Weitere Features für Zukunft
 
-- [ ] Email-Verifizierung
+- [x] Email-Verifizierung ✅
 - [ ] Passwort-Reset-Funktion
 - [ ] Refresh-Tokens
 - [ ] Admin-Panel

@@ -23,6 +23,8 @@ const initializeDatabase = () => {
         lastName TEXT NOT NULL,
         email TEXT UNIQUE NOT NULL,
         password TEXT NOT NULL,
+        isVerified INTEGER DEFAULT 0,
+        verificationToken TEXT,
         createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
         updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP
       )
