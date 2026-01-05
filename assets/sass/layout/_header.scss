@@ -7,6 +7,18 @@
 /* Header */
 
 	#header {
+		background-image: url('../../images/Gemini_Generated_Image_bmpoobmpoobmpoob.png');
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+
+		.logo {
+			max-width: 200px;
+			height: auto;
+			margin: 0 0 (_size(element-margin) * 0.5) 0;
+			display: block;
+		}
+
 		h1 {
 			font-size: 3.25em;
 			margin: 0 0 (_size(element-margin) * 0.275) 0;
