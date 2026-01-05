@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registrierung - NAIA</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      .signup-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 40px;
+        background: #f0f0f0;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .signup-container h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #333;
+      }
+      .form-group input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        box-sizing: border-box;
+      }
+      .form-group input:focus {
+        outline: none;
+        border-color: #0066cc;
+        box-shadow: 0 0 5px rgba(0, 102, 204, 0.3);
+      }
+      .error-message {
+        color: #d32f2f;
+        font-size: 14px;
+        margin-top: 5px;
+        display: none;
+      }
+      .form-group.error input {
+        border-color: #d32f2f;
+      }
+      .form-group.error .error-message {
+        display: block;
+      }
+      .btn-signup {
+        width: 100%;
+        padding: 12px;
+        background: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .btn-signup:hover {
+        background: #45a049;
+      }
+      .btn-signup:disabled {
+        background: #999;
+        cursor: not-allowed;
+      }
+      .login-link {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .login-link a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      .login-link a:hover {
+        text-decoration: underline;
+      }
+      .success-message {
+        background: #4caf50;
+        color: white;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        display: none;
+      }
+      .password-strength {
+        margin-top: 8px;
+        font-size: 13px;
+      }
+      .strength-bar {
+        height: 5px;
+        background: #ddd;
+        border-radius: 3px;
+        overflow: hidden;
+        margin-top: 5px;
+      }
+      .strength-fill {
+        height: 100%;
+        width: 0%;
+        transition: width 0.3s;
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+    <div id="page-wrapper">
+      <!-- Header -->
+      <header id="header">
+        <h1><a href="index.html">NAIA</a></h1>
+        <nav id="nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html" class="button">Login</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Main -->
+      <section id="main" class="container medium">
+        <div class="signup-container">
+          <h2>Registrieren</h2>
+
+          <div class="success-message" id="successMessage"></div>
+
+          <form id="signupForm">
+            <div class="form-group">
+              <label for="firstName">Vorname</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="Max"
+                required
+              />
+              <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="lastName">Nachname</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Mustermann"
+                required
+              />
+              <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="deine@email.de"
+                required
+              />
+              <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Passwort</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Mindestens 8 Zeichen"
+                required
+              />
+              <div class="password-strength">
+                <div style="margin-bottom: 5px">
+                  Passwort-Stärke: <span id="strengthText">Schwach</span>
+                </div>
+                <div class="strength-bar">
+                  <div class="strength-fill" id="strengthFill"></div>
+                </div>
+              </div>
+              <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="confirmPassword">Passwort bestätigen</label>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="Passwort wiederholen"
+                required
+              />
+              <span class="error-message"></span>
+            </div>
+
+            <button type="submit" class="btn-signup" id="signupBtn">
+              Registrieren
+            </button>
+          </form>
+
+          <div class="login-link">
+            Du hast bereits ein Konto? <a href="login.html">Hier anmelden</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <ul class="copyright">
+          <li>&copy; NAIA. All rights reserved.</li>
+        </ul>
+      </footer>
+    </div>
+
+    <script>
+      const signupForm = document.getElementById("signupForm");
+      const signupBtn = document.getElementById("signupBtn");
+      const successMessage = document.getElementById("successMessage");
+      const passwordInput = document.getElementById("password");
+      const strengthFill = document.getElementById("strengthFill");
+      const strengthText = document.getElementById("strengthText");
+
+      // Passwort-Stärke anzeigen
+      passwordInput.addEventListener("input", (e) => {
+        const strength = calculatePasswordStrength(e.target.value);
+        strengthFill.style.width = strength.percentage + "%";
+        strengthFill.style.backgroundColor = strength.color;
+        strengthText.textContent = strength.text;
+      });
+
+      signupForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        clearErrors();
+
+        const firstName = document.getElementById("firstName").value.trim();
+        const lastName = document.getElementById("lastName").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
+
+        // Validierung
+        let hasError = false;
+
+        if (!firstName || firstName.length < 2) {
+          showError("firstName", "Bitte gebe deinen Vornamen ein");
+          hasError = true;
+        }
+        if (!lastName || lastName.length < 2) {
+          showError("lastName", "Bitte gebe deinen Nachnamen ein");
+          hasError = true;
+        }
+        if (!email || !isValidEmail(email)) {
+          showError("email", "Bitte gebe eine gültige Email-Adresse ein");
+          hasError = true;
+        }
+        if (!password || password.length < 8) {
+          showError("password", "Passwort muss mindestens 8 Zeichen lang sein");
+          hasError = true;
+        }
+        if (password !== confirmPassword) {
+          showError("confirmPassword", "Passwörter stimmen nicht überein");
+          hasError = true;
+        }
+
+        if (hasError) return;
+
+        signupBtn.disabled = true;
+        signupBtn.textContent = "Wird registriert...";
+
+        try {
+          const response = await fetch("/api/auth/signup", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ firstName, lastName, email, password }),
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            successMessage.textContent =
+              "Registrierung erfolgreich! Du wirst zum Login weitergeleitet...";
+            successMessage.style.display = "block";
+
+            // Nach 2 Sekunden zum Login redirecten
+            setTimeout(() => {
+              window.location.href = "login.html";
+            }, 2000);
+          } else {
+            showError("email", data.message || "Registrierung fehlgeschlagen");
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          showError(
+            "email",
+            "Ein Fehler ist aufgetreten. Versuche es später erneut."
+          );
+        } finally {
+          signupBtn.disabled = false;
+          signupBtn.textContent = "Registrieren";
+        }
+      });
+
+      function isValidEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+      }
+
+      function calculatePasswordStrength(password) {
+        let strength = 0;
+
+        if (password.length >= 8) strength += 25;
+        if (password.length >= 12) strength += 25;
+        if (/[a-z]/.test(password) && /[A-Z]/.test(password)) strength += 25;
+        if (/\d/.test(password)) strength += 15;
+        if (/[^a-zA-Z\d]/.test(password)) strength += 10;
+
+        let text = "Schwach";
+        let color = "#d32f2f";
+
+        if (strength >= 80) {
+          text = "Stark";
+          color = "#4caf50";
+        } else if (strength >= 50) {
+          text = "Mittel";
+          color = "#ff9800";
+        }
+
+        return { percentage: Math.min(strength, 100), text, color };
+      }
+
+      function showError(fieldName, message) {
+        const field = document.getElementById(fieldName);
+        const formGroup = field.closest(".form-group");
+        const errorMsg = formGroup.querySelector(".error-message");
+        formGroup.classList.add("error");
+        errorMsg.textContent = message;
+      }
+
+      function clearErrors() {
+        document.querySelectorAll(".form-group").forEach((group) => {
+          group.classList.remove("error");
+        });
+      }
+    </script>
+  </body>
+</html>

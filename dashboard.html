@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard - NAIA</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      .dashboard-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 40px;
+        background: #f0f0f0;
+        border-radius: 8px;
+      }
+      .dashboard-container h2 {
+        margin-bottom: 30px;
+        color: #333;
+      }
+      .user-info {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .user-info p {
+        margin: 10px 0;
+        color: #666;
+      }
+      .user-info strong {
+        color: #333;
+      }
+      .btn-logout {
+        background: #d32f2f;
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s;
+      }
+      .btn-logout:hover {
+        background: #b71c1c;
+      }
+      .alert {
+        background: #fff3cd;
+        border: 1px solid #ffc107;
+        color: #856404;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+    <div id="page-wrapper">
+      <!-- Header -->
+      <header id="header">
+        <h1><a href="index.html">NAIA</a></h1>
+        <nav id="nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+              <a href="#" class="button" onclick="logout(); return false;"
+                >Logout</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Main -->
+      <section id="main" class="container medium">
+        <div class="dashboard-container">
+          <h2>Willkommen!</h2>
+
+          <div class="alert">
+            Du bist angemeldet und kannst nun unsere Premium-Waschmaschinen
+            mieten.
+          </div>
+
+          <div class="user-info" id="userInfo">
+            <p>
+              <strong>Name:</strong> <span id="userName">Wird geladen...</span>
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <span id="userEmail">Wird geladen...</span>
+            </p>
+            <p>
+              <strong>Registriert seit:</strong>
+              <span id="userCreated">Wird geladen...</span>
+            </p>
+          </div>
+
+          <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <ul class="copyright">
+          <li>&copy; NAIA. All rights reserved.</li>
+        </ul>
+      </footer>
+    </div>
+
+    <script>
+      // Beim Laden der Seite, Benutzerdaten laden
+      window.addEventListener("load", () => {
+        const user = localStorage.getItem("user");
+        const token = localStorage.getItem("token");
+
+        if (!user || !token) {
+          // Wenn nicht angemeldet, zum Login weiterleiten
+          window.location.href = "login.html";
+          return;
+        }
+
+        try {
+          const userData = JSON.parse(user);
+          document.getElementById("userName").textContent =
+            userData.firstName + " " + userData.lastName;
+          document.getElementById("userEmail").textContent = userData.email;
+
+          const createdDate = new Date(userData.createdAt);
+          document.getElementById("userCreated").textContent =
+            createdDate.toLocaleDateString("de-DE");
+        } catch (error) {
+          console.error("Error parsing user data:", error);
+        }
+      });
+
+      function logout() {
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>
