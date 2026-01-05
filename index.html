@@ -67,6 +67,16 @@
         padding-top: 8em;
         padding-bottom: 6em;
       }
+
+      /* Mobile Anpassung für Banner */
+      @media screen and (max-width: 768px) {
+        #banner {
+          min-height: 40vh;
+          padding-top: 4em;
+          padding-bottom: 3em;
+        }
+      }
+
       #header.alt h1 {
         display: none;
       }
@@ -139,7 +149,13 @@
         <img
           src="images/Nixe.png"
           alt="NAIA Nixe"
-          style="max-width: 400px; height: auto"
+          style="
+            max-width: 400px;
+            width: 80vw;
+            height: auto;
+            display: block;
+            margin: 0 auto 30px;
+          "
         />
         <!-- <ul class="actions special">
           <li><a href="signup.html" class="button primary">Jetzt mieten</a></li>
