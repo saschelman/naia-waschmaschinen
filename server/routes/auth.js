@@ -1,8 +1,10 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const crypto = require("crypto");
 const { getQuery, runQuery } = require("../database");
 const config = require("../config");
+const { sendVerificationEmail } = require("../utils/email");
 
 const router = express.Router();
 
@@ -53,16 +55,130 @@ router.post("/signup", async (req, res) => {
     // Passwort hashen
     const hashedPassword = await bcrypt.hash(password, 10);
 
+    // Verifikations-Token generieren
+    const verificationToken = crypto.randomBytes(32).toString("hex");
+
     // User in DB speichern
     await runQuery(
-      "INSERT INTO users (firstName, lastName, email, password) VALUES (?, ?, ?, ?)",
-      [firstName, lastName, email, hashedPassword]
+      "INSERT INTO users (firstName, lastName, email, password, verificationToken) VALUES (?, ?, ?, ?, ?)",
+      [firstName, lastName, email, hashedPassword, verificationToken]
     );
 
-    res.status(201).json({ message: "Registrierung erfolgreich" });
+    // Verifikations-Email versenden
+    const emailSent = await sendVerificationEmail(
+      email,
+      firstName,
+      verificationToken
+    );
+
+    if (emailSent) {
+      res.status(201).json({
+        message:
+          "Registrierung erfolgreich! Bitte überprüfe dein Email-Postfach zur Bestätigung.",
+      });
+    } else {
+      res.status(201).json({
+        message:
+          "Registrierung erfolgreich, aber Email konnte nicht versendet werden. Versuche später erneut.",
+        warningEmailFailed: true,
+      });
+    }
   } catch (error) {
     console.error("Signup Error:", error);
     res.status(500).json({ message: "Registrierung fehlgeschlagen" });
+  }
+});
+
+// EMAIL VERIFIZIEREN
+router.get("/verify-email/:token", async (req, res) => {
+  try {
+    const { token } = req.params;
+
+    // User mit diesem Token suchen
+    const user = await getQuery(
+      "SELECT * FROM users WHERE verificationToken = ?",
+      [token]
+    );
+
+    if (!user) {
+      return res
+        .status(400)
+        .json({ message: "Ungültiger oder abgelaufener Token" });
+    }
+
+    // User als verified markieren
+    await runQuery(
+      "UPDATE users SET isVerified = 1, verificationToken = NULL WHERE id = ?",
+      [user.id]
+    );
+
+    // HTML-Response mit Auto-Redirect
+    res.send(`
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Email bestätigt - NAIA</title>
+        <meta charset="utf-8">
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #f0f0f0;
+          }
+          .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 500px;
+          }
+          h1 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+          }
+          p {
+            color: #666;
+            margin: 15px 0;
+          }
+          .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0066cc;
+            margin: 20px 0;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <h1>✅ Email bestätigt!</h1>
+          <p>Dein Account wurde erfolgreich aktiviert.</p>
+          <p>Du wirst in <span class="countdown" id="countdown">5</span> Sekunden zum Login weitergeleitet...</p>
+        </div>
+        <script>
+          let count = 5;
+          const countdownEl = document.getElementById('countdown');
+          
+          const interval = setInterval(() => {
+            count--;
+            countdownEl.textContent = count;
+            
+            if (count === 0) {
+              clearInterval(interval);
+              window.location.href = '/login.html';
+            }
+          }, 1000);
+        </script>
+      </body>
+      </html>
+    `);
+  } catch (error) {
+    console.error("Verify Email Error:", error);
+    res.status(500).json({ message: "Fehler beim Bestätigen der Email" });
   }
 });
 
@@ -83,6 +199,14 @@ router.post("/login", async (req, res) => {
 
     if (!user) {
       return res.status(401).json({ message: "Email oder Passwort ungültig" });
+    }
+
+    // Email verifiziert?
+    if (!user.isVerified) {
+      return res.status(403).json({
+        message:
+          "Bitte bestätige deine Email-Adresse, bevor du dich anmeldest.",
+      });
     }
 
     // Passwort überprüfen
