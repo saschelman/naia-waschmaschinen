@@ -60,6 +60,18 @@
       }
     </script>
     <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        overflow-x: hidden;
+        width: 100%;
+      }
+      html {
+        overflow-x: hidden;
+        width: 100%;
+      }
+
       #banner {
         background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
           url("images/pexels-matthardy-1533720.jpg") center/cover no-repeat !important;
@@ -200,10 +212,6 @@
             transform: translateY(20px);
           "
         />
-        <!-- <ul class="actions special">
-          <li><a href="signup.html" class="button primary">Jetzt mieten</a></li>
-          <li><a href="contact.html" class="button">Mehr erfahren</a></li>
-        </ul> -->
       </section>
 
       <!-- Main -->
@@ -220,7 +228,7 @@
           "
         >
           <!-- Logo at Top -->
-          <div style="text-align: center; margin-bottom: 50px">
+          <div style="text-align: center; margin-bottom: 15px">
             <img
               src="images/LOGO_SCHRIFTZUG.png"
               alt="NAIA Waschmaschinen Leasing Karlsruhe Logo"
@@ -802,165 +810,6 @@
           </p>
         </div>
       </section>
-
-      <!-- Footer -->
-      <footer
-        id="footer"
-        style="
-          background: linear-gradient(180deg, #f8f9fa 0%, #f0f4f9 100%);
-          border-top: 1px solid #dfe6f3;
-          padding: 80px 40px 40px;
-        "
-      >
-        <div
-          style="
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-bottom: 50px;
-            border-bottom: 1px solid #e8eef7;
-          "
-        >
-          <div
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-              gap: 60px;
-              margin-bottom: 40px;
-            "
-          >
-            <!-- Info Column -->
-            <div>
-              <h4
-                style="
-                  color: #1e3c72;
-                  margin-bottom: 24px;
-                  font-weight: 700;
-                  font-size: 1.1em;
-                  letter-spacing: -0.3px;
-                "
-              >
-                NAIA - Waschmaschinen Leasing
-              </h4>
-              <p
-                style="
-                  color: #555;
-                  margin: 12px 0;
-                  line-height: 1.8;
-                  font-size: 0.95em;
-                "
-              >
-                Premium Miele Waschmaschinen Leasing in Karlsruhe.<br />Einfach
-                mieten statt kaufen.
-              </p>
-            </div>
-
-            <!-- Contact Column -->
-            <div>
-              <h5
-                style="
-                  color: #1e3c72;
-                  margin-bottom: 20px;
-                  font-weight: 700;
-                  font-size: 0.9em;
-                  text-transform: uppercase;
-                  letter-spacing: 0.5px;
-                  opacity: 0.8;
-                "
-              >
-                Kontakt
-              </h5>
-              <div style="color: #555; line-height: 1.9; font-size: 0.95em">
-                <p style="margin: 8px 0">📍 Karlsruhe, Deutschland</p>
-                <p style="margin: 8px 0">📧 info@naia-waschmaschinen.de</p>
-                <p style="margin: 8px 0; font-weight: 600">
-                  ☎️ +49 (0) 721 XXXXX
-                </p>
-              </div>
-            </div>
-
-            <!-- Legal Column -->
-            <div>
-              <h5
-                style="
-                  color: #1e3c72;
-                  margin-bottom: 20px;
-                  font-weight: 700;
-                  font-size: 0.9em;
-                  text-transform: uppercase;
-                  letter-spacing: 0.5px;
-                  opacity: 0.8;
-                "
-              >
-                Links
-              </h5>
-              <ul style="list-style: none; padding: 0; margin: 0">
-                <li style="margin-bottom: 12px">
-                  <a
-                    href="contact.html"
-                    style="
-                      color: #1e3c72;
-                      text-decoration: none;
-                      font-weight: 500;
-                      transition: all 0.3s;
-                      font-size: 0.95em;
-                    "
-                    onmouseover="this.style.color='#2a5298'; this.style.paddingLeft='8px';"
-                    onmouseout="this.style.color='#1e3c72'; this.style.paddingLeft='0';"
-                    >→ Kontakt</a
-                  >
-                </li>
-                <li style="margin-bottom: 12px">
-                  <a
-                    href="#"
-                    style="
-                      color: #1e3c72;
-                      text-decoration: none;
-                      font-weight: 500;
-                      transition: all 0.3s;
-                      font-size: 0.95em;
-                    "
-                    onmouseover="this.style.color='#2a5298'; this.style.paddingLeft='8px';"
-                    onmouseout="this.style.color='#1e3c72'; this.style.paddingLeft='0';"
-                    >→ Impressum</a
-                  >
-                </li>
-                <li style="margin-bottom: 12px">
-                  <a
-                    href="#"
-                    style="
-                      color: #1e3c72;
-                      text-decoration: none;
-                      font-weight: 500;
-                      transition: all 0.3s;
-                      font-size: 0.95em;
-                    "
-                    onmouseover="this.style.color='#2a5298'; this.style.paddingLeft='8px';"
-                    onmouseout="this.style.color='#1e3c72'; this.style.paddingLeft='0';"
-                    >→ Datenschutz</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div
-          style="
-            text-align: center;
-            padding-top: 40px;
-            color: #888;
-            font-size: 0.9em;
-          "
-        >
-          <p style="margin: 0; line-height: 1.6">
-            © 2026 NAIA Waschmaschinen Leasing. Alle Rechte vorbehalten.
-            <br />
-            <span style="font-size: 0.85em"
-              >Made with care for premium customers 🌟</span
-            >
-          </p>
-        </div>
-      </footer>
     </div>
 
     <!-- Scripts -->
