@@ -6,44 +6,44 @@
 
 /* Header */
 
-	#header {
-		background-image: url('../../images/Gemini_Generated_Image_bmpoobmpoobmpoob.png');
-		background-size: contain;
-		background-position: center;
-		background-repeat: no-repeat;
+#header {
+  background-image: url("../../images/Gemini_Generated_Image_bmpoobmpoobmpoob.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 
-		.logo {
-			max-width: 200px;
-			height: auto;
-			margin: 0 0 (_size(element-margin) * 0.5) 0;
-			display: block;
-		}
+  .logo {
+    max-width: 200px;
+    height: auto;
+    margin: 0 0 (_size(element-margin) * 0.5) 0;
+    display: block;
+  }
 
-		h1 {
-			font-size: 3.25em;
-			margin: 0 0 (_size(element-margin) * 0.275) 0;
-		}
+  h1 {
+    font-size: 3.25em;
+    margin: 0 0 (_size(element-margin) * 0.275) 0;
+  }
 
-		p {
-			font-size: 1.35em;
-			line-height: 1.65em;
-		}
+  p {
+    font-size: 1.35em;
+    line-height: 1.65em;
+  }
 
-		a {
-			color: inherit;
-		}
+  a {
+    color: inherit;
+  }
 
-		@include breakpoint('<=small') {
-			h1 {
-				font-size: 2em;
-			}
+  @include breakpoint("<=small") {
+    h1 {
+      font-size: 2em;
+    }
 
-			p {
-				font-size: 1em;
-			}
-		}
+    p {
+      font-size: 1em;
+    }
+  }
 
-		@include breakpoint('<=xsmall') {
-			margin: 0 0 (_size(element-margin) * 0.5) 0;
-		}
-	}
+  @include breakpoint("<=xsmall") {
+    margin: 0 0 (_size(element-margin) * 0.5) 0;
+  }
+}
