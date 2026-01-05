@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login - NAIA</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      .login-container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 40px;
+        background: #f0f0f0;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .login-container h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #333;
+      }
+      .form-group input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        box-sizing: border-box;
+      }
+      .form-group input:focus {
+        outline: none;
+        border-color: #0066cc;
+        box-shadow: 0 0 5px rgba(0, 102, 204, 0.3);
+      }
+      .error-message {
+        color: #d32f2f;
+        font-size: 14px;
+        margin-top: 5px;
+        display: none;
+      }
+      .form-group.error input {
+        border-color: #d32f2f;
+      }
+      .form-group.error .error-message {
+        display: block;
+      }
+      .btn-login {
+        width: 100%;
+        padding: 12px;
+        background: #0066cc;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .btn-login:hover {
+        background: #0052a3;
+      }
+      .btn-login:disabled {
+        background: #999;
+        cursor: not-allowed;
+      }
+      .signup-link {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .signup-link a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      .signup-link a:hover {
+        text-decoration: underline;
+      }
+      .success-message {
+        background: #4caf50;
+        color: white;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+    <div id="page-wrapper">
+      <!-- Header -->
+      <header id="header">
+        <h1><a href="index.html">NAIA</a></h1>
+        <nav id="nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="signup.html" class="button">Sign Up</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Main -->
+      <section id="main" class="container medium">
+        <div class="login-container">
+          <h2>Login</h2>
+
+          <div class="success-message" id="successMessage"></div>
+
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="deine@email.de"
+                required
+              />
+              <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Passwort</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Passwort"
+                required
+              />
+              <span class="error-message"></span>
+            </div>
+
+            <button type="submit" class="btn-login" id="loginBtn">Login</button>
+          </form>
+
+          <div class="signup-link">
+            Noch kein Konto? <a href="signup.html">Hier registrieren</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <ul class="copyright">
+          <li>&copy; NAIA. All rights reserved.</li>
+        </ul>
+      </footer>
+    </div>
+
+    <script>
+      const loginForm = document.getElementById("loginForm");
+      const loginBtn = document.getElementById("loginBtn");
+      const successMessage = document.getElementById("successMessage");
+
+      loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        clearErrors();
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+
+        // Validierung
+        let hasError = false;
+        if (!email || !isValidEmail(email)) {
+          showError("email", "Bitte gebe eine gültige Email-Adresse ein");
+          hasError = true;
+        }
+        if (!password || password.length < 6) {
+          showError("password", "Passwort muss mindestens 6 Zeichen lang sein");
+          hasError = true;
+        }
+
+        if (hasError) return;
+
+        loginBtn.disabled = true;
+        loginBtn.textContent = "Wird angemeldet...";
+
+        try {
+          const response = await fetch("/api/auth/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, password }),
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            // Token speichern
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("user", JSON.stringify(data.user));
+
+            successMessage.textContent =
+              "Login erfolgreich! Du wirst weitergeleitet...";
+            successMessage.style.display = "block";
+
+            // Nach 2 Sekunden zum Dashboard redirecten
+            setTimeout(() => {
+              window.location.href = "dashboard.html";
+            }, 2000);
+          } else {
+            showError("email", data.message || "Login fehlgeschlagen");
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          showError(
+            "email",
+            "Ein Fehler ist aufgetreten. Versuche es später erneut."
+          );
+        } finally {
+          loginBtn.disabled = false;
+          loginBtn.textContent = "Login";
+        }
+      });
+
+      function isValidEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+      }
+
+      function showError(fieldName, message) {
+        const field = document.getElementById(fieldName);
+        const formGroup = field.closest(".form-group");
+        const errorMsg = formGroup.querySelector(".error-message");
+        formGroup.classList.add("error");
+        errorMsg.textContent = message;
+      }
+
+      function clearErrors() {
+        document.querySelectorAll(".form-group").forEach((group) => {
+          group.classList.remove("error");
+        });
+      }
+    </script>
+  </body>
+</html>
