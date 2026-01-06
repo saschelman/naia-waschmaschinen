@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
   <head>
     <title>
-      Waschmaschinen Leasing Karlsruhe | NAIA - Premium Maschinen wie Miele,
-      Bosch, Siemens mieten ab 14,99€
+      Waschmaschinen Leasing Karlsruhe ab 14,90€ | NAIA – Premium Maschinen
+      mieten | 24h Service
     </title>
     <meta charset="utf-8" />
     <meta
@@ -12,11 +12,11 @@
     />
     <meta
       name="description"
-      content="Waschmaschinen Leasing Karlsruhe: Premium Maschinen wie Miele, Bosch, Siemens mieten statt kaufen. Ab 24,99€/Monat, inklusive Lieferung, Einbau & Service. 24h neue Maschine garantiert."
+      content="Waschmaschinen in Karlsruhe mieten ab 14,90€/Monat. Lieferung & Anschluss inkl., 24h Austausch-Service, monatlich kündbar, Wartung inklusive. Jetzt zur Warteliste anmelden!"
     />
     <meta
       name="keywords"
-      content="Waschmaschinen Leasing Karlsruhe, Waschmaschinen mieten, Premium Maschinen Leasing, Miele Bosch Siemens, Waschmaschinen Abo"
+      content="Waschmaschinen Leasing Karlsruhe, Waschmaschinen mieten Karlsruhe, Waschmaschine Abo, Waschmaschinen Vermietung, Premium Waschmaschinen, monatlich kündbar, 24h Service, Waschmaschine ohne Anschaffungskosten, Waschmaschinen Service Karlsruhe, Mietwaschmaschine"
     />
     <link rel="canonical" href="https://naia-waschmaschinen.de/" />
     <link rel="icon" type="image/png" href="images/Nixe.png" />
@@ -32,22 +32,45 @@
       name="twitter:image"
       content="https://naia-waschmaschinen.de/images/Nixe.png"
     />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- Performance: fonts & CSS preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="assets/css/main.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="assets/css/main.css" /></noscript>
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://naia-waschmaschinen.de/" />
     <meta
       property="og:title"
-      content="Waschmaschinen Leasing Karlsruhe | NAIA"
+      content="Waschmaschinen Leasing ab 14,90€ in Karlsruhe | NAIA"
     />
     <meta
       property="og:description"
-      content="Premium Maschinen wie Miele, Bosch, Siemens mieten ab 24,99€/Monat. Inklusive Lieferung, Einbau & Service in Karlsruhe. 24h neue Maschine."
+      content="Premium Waschmaschinen mieten ab 14,90€/Monat in Karlsruhe. Lieferung & Anschluss inklusive, 24h Austausch-Service, monatlich kündbar. Jetzt zur Warteliste!"
+    />
+    <meta
+      name="twitter:title"
+      content="Waschmaschinen Leasing Karlsruhe ab 14,90€ | NAIA"
+    />
+    <meta
+      name="twitter:description"
+      content="Lieferung & Anschluss inkl., 24h Austausch, monatlich kündbar. Jetzt zur Warteliste anmelden!"
     />
     <!-- Schema.org Markup - LocalBusiness -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
+        "@id": "#naia",
         "name": "NAIA Waschmaschinen Leasing Karlsruhe",
         "description": "Waschmaschinen Leasing und Vermietung in Karlsruhe",
         "url": "https://naia-waschmaschinen.de/",
@@ -62,8 +85,25 @@
         "email": "info@naia-waschmaschinen.de"
       }
     </script>
+    <!-- Schema.org Markup - Service Offer -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Waschmaschinen Leasing",
+        "provider": { "@id": "#naia" },
+        "areaServed": { "@type": "City", "name": "Karlsruhe" },
+        "offers": {
+          "@type": "Offer",
+          "price": "14.90",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/PreOrder",
+          "url": "https://naia-waschmaschinen.de/"
+        }
+      }
+    </script>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+      /* Google Font loaded via <link> for better performance */
 
       * {
         box-sizing: border-box;
@@ -885,6 +925,7 @@
               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0, 0, 0, 0.1)';"
             >
               <img
+                loading="lazy"
                 src="images/waschmaschine.png"
                 alt="Kaputte Waschmaschine"
                 style="
@@ -926,6 +967,7 @@
               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0, 0, 0, 0.1)';"
             >
               <img
+                loading="lazy"
                 src="images/hochtragen.png"
                 alt="Waschmaschine hochträgen"
                 style="
@@ -967,6 +1009,7 @@
               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0, 0, 0, 0.1)';"
             >
               <img
+                loading="lazy"
                 src="images/waschsalon.png"
                 alt="Waschsalon"
                 style="
@@ -1002,6 +1045,7 @@
       <section id="main" class="container">
         <!-- Features Grid -->
         <section
+          id="vorteile"
           style="
             margin-bottom: 25px;
             margin-top: 300px;
@@ -1616,6 +1660,7 @@
 
       <!-- Pricing Section -->
       <section
+        id="preise"
         style="
           margin-bottom: 120px;
           margin-top: 15px;
@@ -1907,6 +1952,8 @@
 
       <!-- Info Badge -->
 
+      <!-- Anchor for signup navigation -->
+      <div id="anmelden" style="position: relative; top: -80px"></div>
       <!-- CTA Section -->
       <section
         id="cta"
