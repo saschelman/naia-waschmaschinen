@@ -90,7 +90,7 @@
           ),
           url("images/pexels-matthardy-1533720.jpg") center/cover no-repeat !important;
         background-attachment: fixed;
-        min-height: 100vh;
+        height: 100vh;
         padding-top: 2em;
         padding-bottom: 2em;
         display: flex;
@@ -173,39 +173,47 @@
       /* Tablet Anpassung */
       @media screen and (min-width: 769px) and (max-width: 1024px) {
         #main {
-          padding-top: 60px !important;
+          padding-top: 30px !important;
         }
       }
 
       /* Laptop */
       @media screen and (min-width: 1025px) and (max-width: 1440px) {
         #main {
-          padding-top: 70px !important;
+          padding-top: 40px !important;
         }
       }
 
       /* Desktop */
       @media screen and (min-width: 1441px) {
         #main {
-          padding-top: 90px !important;
+          padding-top: 50px !important;
         }
       }
 
       #header.alt h1 {
-        display: none;
+        display: block;
       }
       #header h1 {
         display: block;
       }
       #header {
         background-color: transparent;
-        padding: 0;
-        position: sticky;
+        padding-top: 0.1em;
+        padding-bottom: 0.3em;
+        position: fixed;
         top: 0;
+        left: 0;
+        right: 0;
         z-index: 1000;
         box-shadow: none;
         backdrop-filter: blur(8px);
         transition: all 0.3s ease;
+      }
+
+      #header.scrolled {
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 10px rgba(30, 60, 114, 0.1);
       }
       #header:not(.alt) {
         box-shadow: 0 2px 8px rgba(30, 60, 114, 0.05) !important;
@@ -339,7 +347,7 @@
         />
         <a
           href="#"
-          onclick="window.scrollTo({top: 1300, behavior: 'smooth'}); return false;"
+          onclick="const featureGrid = document.querySelector('#main > section'); window.scrollTo({top: featureGrid.offsetTop - 30, behavior: 'smooth'}); return false;"
           style="
             margin-top: 40px;
             padding: 16px 48px;
@@ -374,7 +382,7 @@
             margin-bottom: 120px;
             margin-top: 300px;
             background: linear-gradient(135deg, #f8fafc 0%, #eef4ff 100%);
-            padding: 120px 60px;
+            padding: 60px 60px;
             border-radius: 32px;
             box-shadow: 0 30px 80px rgba(30, 60, 114, 0.15),
               0 8px 20px rgba(30, 60, 114, 0.08);
@@ -942,6 +950,61 @@
                 </ul>
               </div>
             </div>
+
+            <!-- Info Badge -->
+            <div
+              style="
+                text-align: center;
+                padding: 28px 48px;
+                background: linear-gradient(
+                  135deg,
+                  rgba(255, 245, 220, 0.8) 0%,
+                  rgba(255, 250, 240, 0.8) 100%
+                );
+                border: 2px solid rgba(255, 193, 7, 0.4);
+                border-radius: 16px;
+                color: #1e3c72;
+                font-weight: 700;
+                font-size: 1.3em;
+                letter-spacing: 0.3px;
+                backdrop-filter: blur(8px);
+                margin-top: 80px;
+                margin-bottom: 40px;
+                display: inline-block;
+                left: 50%;
+                transform: translateX(-50%);
+                position: relative;
+                box-shadow: 0 8px 32px rgba(255, 193, 7, 0.15);
+              "
+            >
+              🚀 Bald verfügbar in Karlsruhe
+            </div>
+            <div style="text-align: center; margin-top: 0">
+              <a
+                href="#cta"
+                onclick="const cta = document.getElementById('cta'); window.scrollTo({top: cta.offsetTop - 50, behavior: 'smooth'}); return false;"
+                style="
+                  padding: 18px 60px;
+                  background: linear-gradient(135deg, #ffc107 0%, #ffb300 100%);
+                  color: #1e3c72;
+                  text-decoration: none;
+                  border-radius: 12px;
+                  font-weight: 800;
+                  font-size: 1.15em;
+                  letter-spacing: 0.5px;
+                  border: none;
+                  cursor: pointer;
+                  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                  display: inline-block;
+                  box-shadow: 0 12px 40px rgba(255, 193, 7, 0.4),
+                    0 4px 12px rgba(0, 0, 0, 0.12);
+                "
+                onmouseover="this.style.background='linear-gradient(135deg, #ffb300 0%, #ffa300 100%)'; this.style.transform='translateY(-4px)'; this.style.boxShadow='0 18px 50px rgba(255, 193, 7, 0.55), 0 6px 16px rgba(0, 0, 0, 0.15)';"
+                onmouseout="this.style.background='linear-gradient(135deg, #ffc107 0%, #ffb300 100%)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 12px 40px rgba(255, 193, 7, 0.4), 0 4px 12px rgba(0, 0, 0, 0.12)';"
+              >
+                Jetzt anmelden und nix verpassen
+              </a>
+            </div>
           </div>
         </section>
       </section>
@@ -1185,6 +1248,27 @@
             </button>
           </form>
 
+          <div
+            style="
+              margin-top: 40px;
+              padding-top: 32px;
+              border-top: 1px solid rgba(255, 255, 255, 0.2);
+            "
+          >
+            <p
+              style="
+                color: #ffffff;
+                font-size: 0.95em;
+                font-weight: 500;
+                letter-spacing: 0.3px;
+                line-height: 1.6;
+                margin: 0;
+              "
+            >
+              Wir melden uns bei dir, wenn es losgeht!
+            </p>
+          </div>
+
           <p
             id="successMessage"
             style="
@@ -1192,6 +1276,7 @@
               display: none;
               font-weight: 700;
               font-size: 1.15em;
+              margin-top: 28px;
             "
           >
             ✓ Super! Wir melden uns in Kürze bei dir.
@@ -1285,6 +1370,28 @@
             button.textContent = "Jetzt anmelden";
           }
         });
+
+      // Logo hidden, buttons always visible, background only on scroll
+      document.getElementById("header").querySelector("h1").style.display =
+        "none";
+
+      window.addEventListener(
+        "scroll",
+        function () {
+          const header = document.getElementById("header");
+          const h1 = header.querySelector("h1");
+          const main = document.getElementById("main");
+
+          if (window.scrollY >= main.offsetTop) {
+            header.classList.add("scrolled");
+            h1.style.display = "block";
+          } else {
+            header.classList.remove("scrolled");
+            h1.style.display = "none";
+          }
+        },
+        { passive: true }
+      );
     </script>
   </body>
 </html>
