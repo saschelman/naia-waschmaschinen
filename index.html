@@ -675,10 +675,118 @@
       /* Feature Cards Hover Effects */
       .feature-card {
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        background: linear-gradient(135deg, #ffffff 0%, #f9fbff 100%);
+        padding: 48px 40px;
+        border-radius: 20px;
+        border: 2px solid #e8f0ff;
+        border-left: 5px solid #1e3c72;
+        box-shadow: 0 8px 32px rgba(30, 60, 114, 0.08),
+          0 2px 8px rgba(0, 0, 0, 0.04);
+        position: relative;
+        overflow: hidden;
       }
       .feature-card:hover {
         transform: translateY(-16px) scale(1.02);
         box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18) !important;
+      }
+      .feature-card.yellow {
+        background: linear-gradient(135deg, #ffffff 0%, #fffbf0 100%);
+        border: 2px solid #ffe8cc;
+        border-left: 5px solid #ffc107;
+        box-shadow: 0 8px 32px rgba(255, 193, 7, 0.08),
+          0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+      .feature-card.blue {
+        background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+        border: 2px solid #cce7ff;
+        border-left: 5px solid #2196f3;
+        box-shadow: 0 8px 32px rgba(33, 150, 243, 0.08),
+          0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+      .feature-card.green {
+        background: linear-gradient(135deg, #ffffff 0%, #f2fdf5 100%);
+        border: 2px solid #daf0e3;
+        border-left: 5px solid #66bb6a;
+        box-shadow: 0 8px 32px rgba(102, 187, 106, 0.08),
+          0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+      .feature-icon {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        opacity: 0.95;
+        position: relative;
+        z-index: 1;
+      }
+      .feature-card h3 {
+        font-size: 1.5em;
+        color: #1e3c72;
+        margin-bottom: 12px;
+        font-weight: 800;
+        letter-spacing: -0.3px;
+      }
+      .feature-card p {
+        font-size: 0.95em;
+        color: #666;
+        line-height: 1.8;
+        margin: 0 0 16px 0;
+        font-weight: 500;
+      }
+      .feature-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 0.9em;
+        color: #555;
+        line-height: 2;
+      }
+      .feature-card ul li {
+        padding: 4px 0;
+      }
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 32px;
+        margin-bottom: 40px;
+      }
+      .section-container {
+        margin-bottom: 25px;
+        margin-top: 25px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        background: linear-gradient(135deg, #f8fafc 0%, #eef4ff 100%);
+        padding: 60px 60px;
+        border-radius: 32px;
+        box-shadow: 0 30px 80px rgba(30, 60, 114, 0.15),
+          0 8px 20px rgba(30, 60, 114, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+      .section-header {
+        text-align: center;
+        margin-bottom: 90px;
+      }
+      .section-title {
+        font-size: 3.2em;
+        color: #1e3c72;
+        margin-bottom: 25px;
+        font-weight: 900;
+        letter-spacing: -1px;
+        line-height: 1.2;
+      }
+      .gradient-text {
+        background: linear-gradient(135deg, #1e3c72 0%, #3b82f6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .section-subtitle {
+        font-size: 1.35em;
+        color: #555;
+        line-height: 1.7;
+        max-width: 800px;
+        margin: 0 auto;
+        font-weight: 400;
       }
     </style>
   </head>
@@ -1154,503 +1262,64 @@
                     -webkit-text-fill-color: transparent;
                     background-clip: text;
                   "
-                  >Premium-Qualität ohne Anschaffungskosten.</strong
+                  >Qualität, die passt.</strong
                 >
-                <span style="color: #4caf50; font-weight: 600"
-                  >Lieferung, Einbau & Wartung</span
+                <span style="color: #666; font-weight: 500"
+                  >Lieferung, Installation & Wartung</span
                 >
                 inklusive.
                 <strong style="color: #1e3c72"
-                  >24h Austausch garantiert.</strong
+                  >Schneller Support bei Problemen.</strong
                 >
               </p>
             </div>
 
-            <div
-              style="
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-                gap: 32px;
-                margin-bottom: 40px;
-              "
-            >
-              <!-- Feature 1 - Wartungsfrei -->
-              <div
-                style="
-                  background: linear-gradient(135deg, #ffffff 0%, #f9fbff 100%);
-                  padding: 48px 40px;
-                  border-radius: 20px;
-                  border: 2px solid #e8f0ff;
-                  border-left: 5px solid #1e3c72;
-                  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                  box-shadow: 0 8px 32px rgba(30, 60, 114, 0.08),
-                    0 2px 8px rgba(0, 0, 0, 0.04);
-                  position: relative;
-                  overflow: hidden;
-                "
-                class="feature-card"
-              >
-                <div
-                  style="
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 100px;
-                    height: 100px;
-                    background: radial-gradient(
-                      circle,
-                      rgba(30, 60, 114, 0.05) 0%,
-                      transparent 70%
-                    );
-                    border-radius: 50%;
-                  "
-                ></div>
-                <div
-                  style="
-                    font-size: 3.5em;
-                    margin-bottom: 20px;
-                    opacity: 0.95;
-                    position: relative;
-                    z-index: 1;
-                  "
-                >
-                  ✓
-                </div>
-                <h3
-                  style="
-                    font-size: 1.5em;
-                    color: #1e3c72;
-                    margin-bottom: 12px;
-                    font-weight: 800;
-                    letter-spacing: -0.3px;
-                  "
-                >
-                  24/7 Zuverlässigkeit
-                </h3>
-                <p
-                  style="
-                    font-size: 0.95em;
-                    color: #666;
-                    line-height: 1.8;
-                    margin: 0 0 16px 0;
-                    font-weight: 500;
-                  "
-                >
-                  Immer einsatzbereit für dich
-                </p>
-                <ul
-                  style="
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-                    font-size: 0.9em;
-                    color: #555;
-                    line-height: 2;
-                  "
-                >
-                  <li style="padding: 4px 0">✓ 24h Notfall-Austausch</li>
-                  <li style="padding: 4px 0">✓ Keine Reparaturkosten</li>
-                  <li style="padding: 4px 0">✓ Sofort-Ersatz bei Fehler</li>
+            <div class="feature-grid">
+              <!-- Feature 1 -->
+              <div class="feature-card">
+                <div class="feature-icon">✓</div>
+                <h3>Wartungsfrei</h3>
+                <p>Keine Sorgen, wir kümmern uns</p>
+                <ul>
+                  <li>✓ Keine Reparaturkosten</li>
+                  <li>✓ Alle Wartungen inkl.</li>
+                  <li>✓ Immer einsatzbereit</li>
                 </ul>
               </div>
 
-              <!-- Feature 2 - Direkter Support -->
-              <div
-                style="
-                  background: linear-gradient(135deg, #ffffff 0%, #fffbf0 100%);
-                  padding: 48px 40px;
-                  border-radius: 20px;
-                  border: 2px solid #ffe8cc;
-                  border-left: 5px solid #ffc107;
-                  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                  box-shadow: 0 8px 32px rgba(255, 193, 7, 0.08),
-                    0 2px 8px rgba(0, 0, 0, 0.04);
-                  position: relative;
-                  overflow: hidden;
-                "
-                class="feature-card"
-              >
-                <div
-                  style="
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 100px;
-                    height: 100px;
-                    background: radial-gradient(
-                      circle,
-                      rgba(255, 193, 7, 0.08) 0%,
-                      transparent 70%
-                    );
-                    border-radius: 50%;
-                  "
-                ></div>
-                <div
-                  style="
-                    font-size: 3.5em;
-                    margin-bottom: 20px;
-                    opacity: 0.95;
-                    position: relative;
-                    z-index: 1;
-                  "
-                >
-                  ⚡
-                </div>
-                <h3
-                  style="
-                    font-size: 1.5em;
-                    color: #1e3c72;
-                    margin-bottom: 12px;
-                    font-weight: 800;
-                    letter-spacing: -0.3px;
-                  "
-                >
-                  Direkter Support
-                </h3>
-                <p
-                  style="
-                    font-size: 0.95em;
-                    color: #666;
-                    line-height: 1.8;
-                    margin: 0 0 16px 0;
-                    font-weight: 500;
-                  "
-                >
-                  Bei Defekt sofort Ersatz
-                </p>
-                <ul
-                  style="
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-                    font-size: 0.9em;
-                    color: #555;
-                    line-height: 2;
-                  "
-                >
-                  <li style="padding: 4px 0">✓ Austausch innerhalb 24h</li>
-                  <li style="padding: 4px 0">✓ Keine langen Wartezeiten</li>
-                  <li style="padding: 4px 0">✓ Immer einsatzbereit</li>
+              <!-- Feature 2 -->
+              <div class="feature-card yellow">
+                <div class="feature-icon">⚡</div>
+                <h3>24h Support</h3>
+                <p>Bei Problemen schnelle Hilfe</p>
+                <ul>
+                  <li>✓ Austausch in 24h</li>
+                  <li>✓ Keine Kosten</li>
+                  <li>✓ Keine Ausfallzeit</li>
                 </ul>
               </div>
 
-              <!-- Feature 3 - 24h Austausch -->
-              <div
-                style="
-                  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
-                  padding: 48px 40px;
-                  border-radius: 20px;
-                  border: 2px solid #dcf5e3;
-                  border-left: 5px solid #4caf50;
-                  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                  box-shadow: 0 8px 32px rgba(76, 175, 80, 0.08),
-                    0 2px 8px rgba(0, 0, 0, 0.04);
-                  position: relative;
-                  overflow: hidden;
-                "
-                class="feature-card"
-              >
-                <div
-                  style="
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 100px;
-                    height: 100px;
-                    background: radial-gradient(
-                      circle,
-                      rgba(76, 175, 80, 0.08) 0%,
-                      transparent 70%
-                    );
-                    border-radius: 50%;
-                  "
-                ></div>
-                <div
-                  style="
-                    font-size: 3.5em;
-                    margin-bottom: 20px;
-                    opacity: 0.95;
-                    position: relative;
-                    z-index: 1;
-                  "
-                >
-                  🚚
-                </div>
-                <h3
-                  style="
-                    font-size: 1.5em;
-                    color: #1e3c72;
-                    margin-bottom: 12px;
-                    font-weight: 800;
-                    letter-spacing: -0.3px;
-                  "
-                >
-                  24h Austausch
-                </h3>
-                <p
-                  style="
-                    font-size: 0.95em;
-                    color: #666;
-                    line-height: 1.8;
-                    margin: 0 0 16px 0;
-                    font-weight: 500;
-                  "
-                >
-                  Defekt? Sofort gelöst
-                </p>
-                <ul
-                  style="
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-                    font-size: 0.9em;
-                    color: #555;
-                    line-height: 2;
-                  "
-                >
-                  <li style="padding: 4px 0">✓ Neue Maschine in 24h</li>
-                  <li style="padding: 4px 0">✓ Komplett kostenlos</li>
-                  <li style="padding: 4px 0">✓ Keine Ausfallzeit</li>
+              <!-- Feature 3 -->
+              <div class="feature-card blue">
+                <div class="feature-icon">📋</div>
+                <h3>Flexible Verträge</h3>
+                <p>Volle Flexibilität</p>
+                <ul>
+                  <li>✓ Monatlich kündbar</li>
+                  <li>✓ Jederzeit upgraden</li>
+                  <li>✓ Keine Bindung</li>
                 </ul>
               </div>
 
-              <!-- Feature 4 - Flexible Laufzeiten -->
-              <div
-                style="
-                  background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
-                  padding: 48px 40px;
-                  border-radius: 20px;
-                  border: 2px solid #cce7ff;
-                  border-left: 5px solid #2196f3;
-                  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                  box-shadow: 0 8px 32px rgba(33, 150, 243, 0.08),
-                    0 2px 8px rgba(0, 0, 0, 0.04);
-                  position: relative;
-                  overflow: hidden;
-                "
-                class="feature-card"
-              >
-                <div
-                  style="
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 100px;
-                    height: 100px;
-                    background: radial-gradient(
-                      circle,
-                      rgba(33, 150, 243, 0.08) 0%,
-                      transparent 70%
-                    );
-                    border-radius: 50%;
-                  "
-                ></div>
-                <div
-                  style="
-                    font-size: 3.5em;
-                    margin-bottom: 20px;
-                    opacity: 0.95;
-                    position: relative;
-                    z-index: 1;
-                  "
-                >
-                  📋
-                </div>
-                <h3
-                  style="
-                    font-size: 1.5em;
-                    color: #1e3c72;
-                    margin-bottom: 12px;
-                    font-weight: 800;
-                    letter-spacing: -0.3px;
-                  "
-                >
-                  Flexible Verträge
-                </h3>
-                <p
-                  style="
-                    font-size: 0.95em;
-                    color: #666;
-                    line-height: 1.8;
-                    margin: 0 0 16px 0;
-                    font-weight: 500;
-                  "
-                >
-                  Volle Flexibilität
-                </p>
-                <ul
-                  style="
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-                    font-size: 0.9em;
-                    color: #555;
-                    line-height: 2;
-                  "
-                >
-                  <li style="padding: 4px 0">✓ Monatlich kündbar</li>
-                  <li style="padding: 4px 0">✓ Jederzeit upgraden</li>
-                  <li style="padding: 4px 0">✓ Keine Bindung</li>
-                </ul>
-              </div>
-
-              <!-- Feature 5 - Nachhaltig -->
-              <div
-                style="
-                  background: linear-gradient(135deg, #ffffff 0%, #f2fdf5 100%);
-                  padding: 48px 40px;
-                  border-radius: 20px;
-                  border: 2px solid #daf0e3;
-                  border-left: 5px solid #66bb6a;
-                  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                  box-shadow: 0 8px 32px rgba(102, 187, 106, 0.08),
-                    0 2px 8px rgba(0, 0, 0, 0.04);
-                  position: relative;
-                  overflow: hidden;
-                "
-                class="feature-card"
-              >
-                <div
-                  style="
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 100px;
-                    height: 100px;
-                    background: radial-gradient(
-                      circle,
-                      rgba(102, 187, 106, 0.08) 0%,
-                      transparent 70%
-                    );
-                    border-radius: 50%;
-                  "
-                ></div>
-                <div
-                  style="
-                    font-size: 3.5em;
-                    margin-bottom: 20px;
-                    opacity: 0.95;
-                    position: relative;
-                    z-index: 1;
-                  "
-                >
-                  🌱
-                </div>
-                <h3
-                  style="
-                    font-size: 1.5em;
-                    color: #1e3c72;
-                    margin-bottom: 12px;
-                    font-weight: 800;
-                    letter-spacing: -0.3px;
-                  "
-                >
-                  Nachhaltig
-                </h3>
-                <p
-                  style="
-                    font-size: 0.95em;
-                    color: #666;
-                    line-height: 1.8;
-                    margin: 0 0 16px 0;
-                    font-weight: 500;
-                  "
-                >
-                  Umweltbewusst handeln
-                </p>
-                <ul
-                  style="
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-                    font-size: 0.9em;
-                    color: #555;
-                    line-height: 2;
-                  "
-                >
-                  <li style="padding: 4px 0">✓ Effiziente Ressourcennutzung</li>
-                  <li style="padding: 4px 0">✓ Weniger Elektroschrott</li>
-                  <li style="padding: 4px 0">✓ Zukunft schonen</li>
-                </ul>
-              </div>
-
-              <!-- Feature 6 - Premium Partner -->
-              <div
-                style="
-                  background: linear-gradient(135deg, #ffffff 0%, #faf5ff 100%);
-                  padding: 48px 40px;
-                  border-radius: 20px;
-                  border: 2px solid #f0e0ff;
-                  border-left: 5px solid #9c27b0;
-                  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                  box-shadow: 0 8px 32px rgba(156, 39, 176, 0.08),
-                    0 2px 8px rgba(0, 0, 0, 0.04);
-                  position: relative;
-                  overflow: hidden;
-                "
-                class="feature-card"
-              >
-                <div
-                  style="
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 100px;
-                    height: 100px;
-                    background: radial-gradient(
-                      circle,
-                      rgba(156, 39, 176, 0.08) 0%,
-                      transparent 70%
-                    );
-                    border-radius: 50%;
-                  "
-                ></div>
-                <div
-                  style="
-                    font-size: 3.5em;
-                    margin-bottom: 20px;
-                    opacity: 0.95;
-                    position: relative;
-                    z-index: 1;
-                  "
-                >
-                  👑
-                </div>
-                <h3
-                  style="
-                    font-size: 1.5em;
-                    color: #1e3c72;
-                    margin-bottom: 12px;
-                    font-weight: 800;
-                    letter-spacing: -0.3px;
-                  "
-                >
-                  Premium Partner
-                </h3>
-                <p
-                  style="
-                    font-size: 0.95em;
-                    color: #666;
-                    line-height: 1.8;
-                    margin: 0 0 16px 0;
-                    font-weight: 500;
-                  "
-                >
-                  Beste Qualität
-                </p>
-                <ul
-                  style="
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-                    font-size: 0.9em;
-                    color: #555;
-                    line-height: 2;
-                  "
-                >
-                  <li style="padding: 4px 0">✓ Hochwertige Geräte</li>
-                  <li style="padding: 4px 0">✓ Deutsche Qualität</li>
-                  <li style="padding: 4px 0">✓ Langlebig garantiert</li>
+              <!-- Feature 4 -->
+              <div class="feature-card green">
+                <div class="feature-icon">🌱</div>
+                <h3>Nachhaltig</h3>
+                <p>Umweltbewusst handeln</p>
+                <ul>
+                  <li>✓ Weniger Elektroschrott</li>
+                  <li>✓ Ressourcenschonung</li>
+                  <li>✓ Zukunft sichern</li>
                 </ul>
               </div>
             </div>
@@ -1888,13 +1557,12 @@
           <div class="pricing-wrapper">
             <div class="features-header">
               <h2>
-                <span style="color: #3b82f6">Einfach</span> waschen. Wir machen
-                <span style="color: #ffc107; font-style: italic">den Rest</span
-                >.
+                <span style="color: #3b82f6">Komplett versorgt.</span> Keine
+                Zusatzkosten.
               </h2>
               <div class="features-icons">
-                <span>🚚 Lieferung & Anschluss inkl.</span>
-                <span>⏱ 24h Austausch-Service</span>
+                <span>🚚 Lieferung & Anschluss</span>
+                <span>⏱ 24h Austausch</span>
                 <span>📄 Monatlich kündbar</span>
               </div>
             </div>
@@ -1907,11 +1575,9 @@
 
                 <ul class="features">
                   <li>
-                    <strong>Solides Standard-Modell</strong> (Ältere Baureihe)
+                    <strong>Solides Standard-Modell</strong>
                   </li>
-                  <li>Technisch topfit & gereinigt</li>
-                  <li>Inkl. Lieferung & Anschluss</li>
-                  <li>Inkl. Gratis Reparatur</li>
+                  <li>Ältere Baureihe, technisch topfit</li>
                 </ul>
               </div>
 
@@ -1924,10 +1590,8 @@
                 <div class="price">24,90€ <span>/mtl.</span></div>
 
                 <ul class="features">
-                  <li><strong>Marken-Modell</strong></li>
-                  <li>Energieeffizient & Leiser</li>
-                  <li>Inkl. Lieferung & Anschluss</li>
-                  <li>Inkl. Gratis Reparatur</li>
+                  <li><strong>Modernes Markengerät</strong></li>
+                  <li>Energieeffizient & leiser</li>
                 </ul>
               </div>
 
@@ -1940,9 +1604,7 @@
 
                 <ul class="features">
                   <li><strong>Nagelneues Gerät</strong></li>
-                  <li>Smarte Features (App/Wifi)</li>
-                  <li>Inkl. Lieferung & Anschluss</li>
-                  <li>Priorisierter 24h Service</li>
+                  <li>Smarte Features (App/WiFi)</li>
                 </ul>
               </div>
             </div>
@@ -2026,17 +1688,11 @@
               line-height: 1.2;
             "
           >
-            🎉
+            Verfügbarkeit in
             <span
               style="
                 color: #ffc107;
                 text-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
-              "
-              >LAUNCH-ANGEBOT</span
-            >
-            FÜR
-            <span
-              style="
                 text-decoration: underline;
                 text-decoration-color: #ffc107;
                 text-decoration-thickness: 3px;
@@ -2047,20 +1703,20 @@
 
           <p
             style="
-              color: rgba(255, 255, 255, 0.9);
-              font-size: 1.25em;
+              color: rgba(255, 255, 255, 0.8);
+              font-size: 1.1em;
               margin-bottom: 60px;
               max-width: 750px;
               margin-left: auto;
               margin-right: auto;
               line-height: 1.8;
-              font-weight: 500;
+              font-weight: 400;
             "
           >
-            Trag dich jetzt unverbindlich in die Warteliste ein und sichere dir:
+            Melden Sie sich an, um über die Verfügbarkeit informiert zu werden:
           </p>
 
-          <!-- Early Bird Benefits -->
+          <!-- Availability Info -->
           <div
             style="
               text-align: left;
@@ -2069,9 +1725,8 @@
               background: rgba(255, 255, 255, 0.95);
               padding: 40px 45px;
               border-radius: 20px;
-              border: 3px solid #ffc107;
-              box-shadow: 0 12px 40px rgba(255, 193, 7, 0.3),
-                0 4px 12px rgba(0, 0, 0, 0.15);
+              border: 1px solid #ddd;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             "
           >
             <div style="margin-bottom: 25px">
@@ -2086,12 +1741,11 @@
                   gap: 12px;
                 "
               >
-                <span style="font-size: 1.5em; flex-shrink: 0">🚚</span>
+                <span style="font-size: 1.5em; flex-shrink: 0">✓</span>
                 <div>
-                  <strong style="color: #3b82f6">Bevorzugte Lieferung</strong
-                  ><br />
-                  <span style="font-size: 0.9em; font-weight: 600; color: #666"
-                    >zum Wunschtermin</span
+                  <strong style="color: #333">Lieferung</strong><br />
+                  <span style="font-size: 0.9em; font-weight: 400; color: #777"
+                    >zu Ihrem Wunschtermin</span
                   >
                 </div>
               </div>
@@ -2108,14 +1762,12 @@
                   gap: 12px;
                 "
               >
-                <span style="font-size: 1.5em; flex-shrink: 0">🎁</span>
+                <span style="font-size: 1.5em; flex-shrink: 0">✓</span>
                 <div>
-                  <strong style="color: #ffc107">6 Monate</strong>
-                  <strong>Öko-Waschmittel</strong>
-                  <strong style="color: #4caf50">gratis</strong><br />
-                  <span
-                    style="color: #4caf50; font-size: 0.9em; font-weight: 600"
-                    >Launch-Angebot: nachhaltig & hautfreundlich</span
+                  <strong style="color: #333">Kostenlos Öko-Waschmittel</strong
+                  ><br />
+                  <span style="color: #777; font-size: 0.9em; font-weight: 400"
+                    >für die ersten 6 Monate</span
                   >
                 </div>
               </div>
@@ -2125,20 +1777,21 @@
               style="
                 margin-top: 25px;
                 padding-top: 25px;
-                border-top: 2px solid rgba(255, 193, 7, 0.3);
+                border-top: 1px solid #ddd;
               "
             >
               <p
                 style="
-                  color: #d68a00;
-                  font-size: 1em;
+                  color: #999;
+                  font-size: 0.9em;
                   margin: 0;
-                  font-style: italic;
-                  font-weight: 600;
+                  font-style: normal;
+                  font-weight: 400;
                   text-align: center;
                 "
               >
-                ⚠️ Nur gültig für Anmeldungen vor dem offiziellen Start.
+                Noch keine Lieferverfügbarkeit für Ihre Region? Registrieren Sie
+                sich für Benachrichtigungen.
               </p>
             </div>
           </div>
