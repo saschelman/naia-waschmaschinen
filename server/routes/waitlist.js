@@ -37,6 +37,34 @@ router.post("/signup", async (req, res) => {
       console.error("Email konnte nicht versendet werden:", err);
     });
 
+    // Auch zu Google Forms senden (asynchron)
+    const params = new URLSearchParams();
+    params.append("entry.1642117603", email);
+    fetch(
+      "https://docs.google.com/forms/d/e/1FAIpQLSeuAuVOPdW-t8jhPe9au9V_yB58wwOU3oCgEyrzltLd4oU6aA/formResponse",
+      {
+        method: "POST",
+        body: params,
+      }
+    ).catch((err) => {
+      console.error("Google Forms Sync fehlgeschlagen:", err);
+    });
+
+    // Formspree Benachrichtigung senden (asynchron)
+    fetch("https://formspree.io/f/mkogangl", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        message: `Neue Waitlist-Anmeldung: ${email}`,
+        timestamp: new Date().toISOString(),
+      }),
+    }).catch((err) => {
+      console.error("Formspree Benachrichtigung fehlgeschlagen:", err);
+    });
+
     // Sofort Erfolg zurücksenden (nicht auf Email warten)
     res.status(200).json({
       message: "Danke! Du wurdest zur Warteliste hinzugefügt",
