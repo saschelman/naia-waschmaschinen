@@ -4555,3 +4555,99 @@ body.landing #main {
   overflow: hidden;
   transition: all 0.4s ease;
 }
+
+/* Impressum Section */
+.impressum-section {
+  background: #f5f5f5;
+  padding: 60px 40px;
+  margin-top: 80px;
+  border-top: 3px solid #e0e0e0;
+}
+
+.impressum-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.impressum-section h3 {
+  color: #1e3c72;
+  font-size: 2em;
+  margin-bottom: 30px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.impressum-section h4 {
+  color: #1e3c72;
+  font-size: 1.2em;
+  margin-top: 25px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.impressum-content p {
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  font-size: 0.95em;
+}
+
+.impressum-content a {
+  color: #2196f3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.impressum-content a:hover {
+  color: #1976d2;
+  text-decoration: underline;
+}
+
+.impressum-footer {
+  text-align: center;
+}
+
+/* Responsive Impressum */
+@media screen and (max-width: 768px) {
+  .impressum-section {
+    padding: 40px 20px;
+    margin-top: 60px;
+  }
+
+  .impressum-section h3 {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+  }
+
+  .impressum-section h4 {
+    font-size: 1.1em;
+    margin-top: 20px;
+  }
+
+  .impressum-content p {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .impressum-section {
+    padding: 30px 15px;
+    margin-top: 40px;
+  }
+
+  .impressum-section h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+
+  .impressum-section h4 {
+    font-size: 1em;
+    margin-top: 15px;
+  }
+
+  .impressum-content p {
+    font-size: 0.85em;
+    line-height: 1.6;
+  }
+}
