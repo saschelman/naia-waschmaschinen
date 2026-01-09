@@ -32,11 +32,14 @@ router.post("/signup", async (req, res) => {
     // In Datenbank speichern
     await runQuery("INSERT INTO waitlist (email) VALUES (?)", [email]);
 
-    // Bestätigungs-Email versenden
-    await sendWaitlistConfirmationEmail(email);
+    // Bestätigungs-Email versenden (asynchron - nicht abwarten!)
+    sendWaitlistConfirmationEmail(email).catch((err) => {
+      console.error("Email konnte nicht versendet werden:", err);
+    });
 
+    // Sofort Erfolg zurücksenden (nicht auf Email warten)
     res.status(200).json({
-      message: "Danke! Bestätigungs-Email versendet",
+      message: "Danke! Du wurdest zur Warteliste hinzugefügt",
     });
   } catch (error) {
     console.error("❌ Waitlist Signup Fehler:", error);
