@@ -141,7 +141,8 @@ const sendWaitlistConfirmationEmail = async (email) => {
     subject: "NAIA Waschmaschinen - Danke für dein Interesse!",
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <div style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); padding: 40px; border-radius: 8px 8px 0 0; color: white; text-align: center;">
+        <div style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); padding: 40px 40px 30px 40px; border-radius: 8px 8px 0 0; color: white; text-align: center;">
+          <img src="https://naia-waschmaschinen.de/images/LOGO_WEB.png" alt="NAIA Logo" style="max-width: 150px; margin-bottom: 20px;" />
           <h1 style="margin: 0; font-size: 28px;">Danke für dein Interesse! 🎉</h1>
         </div>
         
