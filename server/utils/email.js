@@ -62,7 +62,7 @@ const sendWaitlistConfirmationEmail = async (email) => {
     const response = await fetch("https://api.brevo.com/v3/smtp/email", {
       method: "POST",
       headers: {
-        "accept": "application/json",
+        accept: "application/json",
         "api-key": brevoApiKey,
         "Content-Type": "application/json",
       },
