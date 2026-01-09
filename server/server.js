@@ -4,6 +4,7 @@ const path = require("path");
 require("dotenv").config();
 
 const authRoutes = require("./routes/auth");
+const waitlistRoutes = require("./routes/waitlist");
 const { initializeDatabase } = require("./database");
 
 const app = express();
@@ -19,6 +20,7 @@ initializeDatabase();
 
 // Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/waitlist", waitlistRoutes);
 
 // 404 Handler
 app.use((req, res) => {

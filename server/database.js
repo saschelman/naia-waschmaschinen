@@ -37,6 +37,24 @@ const initializeDatabase = () => {
         }
       }
     );
+
+    // Waitlist Tabelle erstellen
+    db.run(
+      `
+      CREATE TABLE IF NOT EXISTS waitlist (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        email TEXT UNIQUE NOT NULL,
+        createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    `,
+      (err) => {
+        if (err) {
+          console.error("Fehler beim Erstellen der waitlist Tabelle:", err);
+        } else {
+          console.log("✅ Waitlist Tabelle initialisiert");
+        }
+      }
+    );
   });
 };
 
