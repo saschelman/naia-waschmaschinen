@@ -133,12 +133,6 @@ const sendPasswordResetEmail = async (email, firstName, resetToken) => {
   }
 };
 
-module.exports = {
-  sendVerificationEmail,
-  sendPasswordResetEmail,
-  sendWaitlistConfirmationEmail,
-};
-
 // Waitlist Bestätigungs-Email
 const sendWaitlistConfirmationEmail = async (email) => {
   const mailOptions = {
@@ -213,4 +207,10 @@ Innovative Waschmaschinen für dein Zuhause
     );
     return false;
   }
+};
+
+module.exports = {
+  sendVerificationEmail,
+  sendPasswordResetEmail,
+  sendWaitlistConfirmationEmail,
 };
