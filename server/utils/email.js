@@ -18,9 +18,9 @@ const sendWaitlistConfirmationEmail = async (email) => {
     subject: "NAIA Waschmaschinen - Danke für dein Interesse!",
     htmlContent: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <div style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); padding: 40px 40px 30px 40px; border-radius: 8px 8px 0 0; color: white; text-align: center;">
-          <img src="https://naia-waschmaschinen.de/images/LOGO_WEB.png" alt="NAIA Logo" style="max-width: 150px; margin-bottom: 20px;" />
-          <h1 style="margin: 0; font-size: 28px;">Danke für dein Interesse! 🎉</h1>
+        <div style="background: #ffffff; padding: 40px 40px 30px 40px; border-radius: 8px 8px 0 0; color: #0f2440; text-align: center; border-bottom: 4px solid #1e3c72; box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);">
+          <img src="https://naia-waschmaschinen.de/images/LOGO_SCHRIFTZUG.png" alt="NAIA Logo" style="max-width: 170px; margin-bottom: 18px; filter: drop-shadow(0 3px 6px rgba(30, 60, 114, 0.25));" />
+          <h1 style="margin: 0; font-size: 28px; display: inline-block; padding: 6px 12px; color: #1e3c72; background: linear-gradient(90deg, rgba(30, 60, 114, 0.08), rgba(42, 82, 152, 0.12)); border-radius: 10px;">Danke für dein Interesse! 🎉</h1>
         </div>
         
         <div style="padding: 40px; background: #f9f9f9; border-radius: 0 0 8px 8px; border-bottom: 3px solid #ffc107;">
