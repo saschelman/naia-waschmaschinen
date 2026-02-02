@@ -11,7 +11,7 @@
     />
     <meta
       name="description"
-      content="Waschmaschine mieten in Karlsruhe ab 14,90€/Monat. Lieferung & Anschluss inkl., 24h Austausch-Service, monatlich kündbar. Jetzt Warteliste sichern."
+      content="Waschmaschine mieten Karlsruhe ab 14,90€/Monat. Naia-Care System, Kreislaufwirtschaft, bis zu 700 kg CO₂ gespart pro Maschine. Lieferung & Anschluss inkl., monatlich kündbar."
     />
     <meta
       name="keywords"
@@ -308,6 +308,197 @@
           font-size: 2.2em !important;
           line-height: 1.3 !important;
           letter-spacing: -0.5px !important;
+        }
+      }
+
+      /* Mobile 425px */
+      @media screen and (max-width: 425px) {
+        /* Circular Economy Section */
+        #circular-economy {
+          padding: 30px 15px !important;
+          margin: 30px 0 !important;
+        }
+
+        #circular-economy > div {
+          max-width: 100% !important;
+        }
+
+        #circular-economy h2 {
+          font-size: 2em !important;
+          line-height: 1.3 !important;
+        }
+
+        #circular-economy p {
+          font-size: 1em !important;
+          margin-bottom: 30px !important;
+        }
+
+        /* 3-Phasen Flow Diagram Box */
+        [style*="background: white; padding: 40px; border-radius: 24px;"] {
+          padding: 20px 15px !important;
+        }
+
+        /* 3-Phasen Grid - einfach übereinander */
+        [style*="grid-template-columns: repeat(3, 1fr)"] {
+          grid-template-columns: 1fr !important;
+          gap: 20px !important;
+          margin-bottom: 20px !important;
+        }
+
+        /* Horizontale Linie verstecken */
+        [style*="position: absolute; top: 60px; left: 0; right: 0; height: 4px;"] {
+          display: none !important;
+        }
+
+        /* Phase Items - zentriert */
+        [style*="display: flex; flex-direction: column; align-items: center; position: relative;"] {
+          text-align: center !important;
+          margin: 0 auto !important;
+        }
+
+        /* Phase Boxes */
+        [style*="padding: 20px; border-radius: 14px; border-left: 5px solid;"] {
+          padding: 15px !important;
+          font-size: 0.95em !important;
+          width: 100% !important;
+          margin: 0 auto !important;
+        }
+
+        /* Impact Cards Container */
+        [style*="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)"] {
+          grid-template-columns: 1fr !important;
+          gap: 15px !important;
+          max-width: 100% !important;
+        }
+      }
+
+      /* Mobile 375px */
+      @media screen and (max-width: 375px) {
+        /* Circular Economy Section */
+        #circular-economy {
+          padding: 30px 15px !important;
+          margin: 30px 0 !important;
+        }
+
+        #circular-economy > div {
+          max-width: 100% !important;
+        }
+
+        #circular-economy h2 {
+          font-size: 1.8em !important;
+          line-height: 1.3 !important;
+        }
+
+        #circular-economy p {
+          font-size: 0.9em !important;
+          margin-bottom: 30px !important;
+        }
+
+        /* 3-Phasen Flow Diagram Box */
+        [style*="background: white; padding: 40px; border-radius: 24px;"] {
+          padding: 20px 15px !important;
+        }
+
+        /* 3-Phasen Grid - einfach übereinander */
+        [style*="grid-template-columns: repeat(3, 1fr)"] {
+          grid-template-columns: 1fr !important;
+          gap: 20px !important;
+          margin-bottom: 20px !important;
+        }
+
+        /* Horizontale Linie verstecken */
+        [style*="position: absolute; top: 60px; left: 0; right: 0; height: 4px;"] {
+          display: none !important;
+        }
+
+        /* Phase Items - zentriert */
+        [style*="display: flex; flex-direction: column; align-items: center; position: relative;"] {
+          text-align: center !important;
+          margin: 0 auto !important;
+        }
+
+        /* Phase Boxes */
+        [style*="padding: 20px; border-radius: 14px; border-left: 5px solid;"] {
+          padding: 15px !important;
+          font-size: 0.85em !important;
+          width: 100% !important;
+          margin: 0 auto !important;
+        }
+
+        /* Impact Cards Container */
+        [style*="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)"] {
+          grid-template-columns: 1fr !important;
+          gap: 15px !important;
+          max-width: 100% !important;
+        }
+
+        /* Pricing Cards */
+        .card {
+          width: 100% !important;
+          padding: 30px 20px !important;
+          transform: scale(1) !important;
+          margin: 0 auto !important;
+        }
+
+        .card.komfort {
+          transform: scale(1) !important;
+        }
+
+        .card.komfort:hover {
+          transform: scale(1) translateY(-8px) !important;
+        }
+
+        .card h3 {
+          font-size: 1.3rem !important;
+        }
+
+        .pricing-container {
+          gap: 15px !important;
+          max-width: 100% !important;
+          padding: 0 15px !important;
+        }
+
+        /* Benefit Grid */
+        [style*="display: flex; justify-content: space-between; gap: 15px;"] {
+          flex-direction: column !important;
+          align-items: center !important;
+        }
+
+        /* Benefit Items */
+        [style*="flex: 1; min-width: 180px; display: flex;"] {
+          width: 100% !important;
+          flex: none !important;
+          min-width: 100% !important;
+        }
+      }
+          transform: scale(1) !important;
+        }
+
+        .card.komfort {
+          transform: scale(1) !important;
+        }
+
+        .card.komfort:hover {
+          transform: scale(1) translateY(-8px) !important;
+        }
+
+        .card h3 {
+          font-size: 1.3rem !important;
+        }
+
+        .pricing-container {
+          gap: 15px !important;
+        }
+
+        /* Benefit Grid */
+        [style*="display: flex; justify-content: space-between; gap: 15px;"] {
+          flex-direction: column !important;
+        }
+
+        /* Impact Cards */
+        [style*="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)"];"] {
+          grid-template-columns: 1fr !important;
+          gap: 15px !important;
         }
       }
 
@@ -747,10 +938,48 @@
         margin: 0;
         font-size: 0.9em;
         color: #555;
-        line-height: 2;
+        line-height: 2.2;
       }
       .feature-card ul li {
-        padding: 4px 0;
+        padding: 8px 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+        padding-left: 0;
+      }
+      .feature-card ul li::before {
+        content: "✓";
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        background: linear-gradient(135deg, #3b82f6 0%, #2196f3 100%);
+        color: white;
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: 0.7em;
+        flex-shrink: 0;
+        box-shadow: 0 3px 8px rgba(59, 130, 246, 0.25);
+      }
+      .feature-card.yellow ul li::before {
+        background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+        box-shadow: 0 3px 8px rgba(255, 152, 0, 0.25);
+      }
+      .feature-card.blue ul li::before {
+        background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+        box-shadow: 0 3px 8px rgba(33, 150, 243, 0.25);
+      }
+      .feature-card.green ul li::before {
+        background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
+        box-shadow: 0 3px 8px rgba(102, 187, 106, 0.25);
+      }
+      .feature-card ul li:hover {
+        transform: translateX(4px);
+        color: #1e3c72;
       }
       .feature-grid {
         display: grid;
@@ -895,19 +1124,19 @@
         display: flex;
         gap: 15px;
         margin: 40px auto;
-        max-width: 550px;
+        max-width: 900px;
         justify-content: center;
         align-items: center;
         width: 100%;
       }
 
       #earlyAccessForm input {
-        flex: 1;
-        max-width: 280px;
-        padding: 15px 20px;
+        flex: 2;
+        min-width: 350px;
+        padding: 22px 28px;
         border: 2px solid #ffc107;
-        border-radius: 10px;
-        font-size: 1em;
+        border-radius: 12px;
+        font-size: 1.1em;
         font-family: "Inter", sans-serif;
         background: rgba(255, 255, 255, 0.95);
         color: #1e3c72;
@@ -925,13 +1154,13 @@
       }
 
       #earlyAccessForm button {
-        padding: 15px 35px;
+        padding: 22px 45px;
         background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
         color: #1e3c72;
         border: none;
-        border-radius: 10px;
+        border-radius: 12px;
         font-weight: 700;
-        font-size: 1em;
+        font-size: 1.1em;
         cursor: pointer;
         transition: all 0.3s ease;
         white-space: nowrap;
@@ -1017,6 +1246,14 @@
         color: #ffc107;
         font-weight: 900;
         min-width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        background: linear-gradient(135deg, rgba(255, 193, 7, 0.2) 0%, rgba(255, 152, 0, 0.2) 100%);
+        border-radius: 50%;
+        box-shadow: 0 3px 10px rgba(255, 193, 7, 0.2);
       }
 
       .offer-title {
@@ -1355,9 +1592,9 @@
                 <h3>Wartungsfrei</h3>
                 <p>Keine Sorgen, wir kümmern uns</p>
                 <ul>
-                  <li>✓ Keine Reparaturkosten</li>
-                  <li>✓ Alle Wartungen inkl.</li>
-                  <li>✓ Immer einsatzbereit</li>
+                  <li>Keine Reparaturkosten</li>
+                  <li>Alle Wartungen inkl.</li>
+                  <li>Immer einsatzbereit</li>
                 </ul>
               </div>
 
@@ -1367,9 +1604,9 @@
                 <h3>24h Support</h3>
                 <p>Bei Problemen schnelle Hilfe</p>
                 <ul>
-                  <li>✓ Austausch in 24h</li>
-                  <li>✓ Keine Kosten</li>
-                  <li>✓ Keine Ausfallzeit</li>
+                  <li>Austausch in 24h</li>
+                  <li>Keine Kosten</li>
+                  <li>Keine Ausfallzeit</li>
                 </ul>
               </div>
 
@@ -1379,9 +1616,9 @@
                 <h3>Flexible Verträge</h3>
                 <p>Volle Flexibilität</p>
                 <ul>
-                  <li>✓ Monatlich kündbar</li>
-                  <li>✓ Jederzeit upgraden</li>
-                  <li>✓ Keine Bindung</li>
+                  <li>Monatlich kündbar</li>
+                  <li>Jederzeit upgraden</li>
+                  <li>Keine Bindung</li>
                 </ul>
               </div>
 
@@ -1391,9 +1628,180 @@
                 <h3>Nachhaltig</h3>
                 <p>Umweltbewusst handeln</p>
                 <ul>
-                  <li>✓ Weniger Elektroschrott</li>
-                  <li>✓ Ressourcenschonung</li>
-                  <li>✓ Zukunft sichern</li>
+                  <li>Weniger Elektroschrott</li>
+                  <li>Ressourcenschonung</li>
+                  <li>Zukunft sichern</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Naia-Care Section -->
+        <section id="naia-care" style="margin-top: 60px; padding: 60px; background: linear-gradient(135deg, #f0fdf5 0%, #e8f9f1 100%); border-radius: 32px; border-left: 8px solid #66bb6a; box-shadow: 0 15px 50px rgba(102, 187, 106, 0.15);">
+          <div style="max-width: 1000px; margin: 0 auto;">
+            <h2 style="font-size: 2.8em; color: #1e3c72; margin-bottom: 30px; font-weight: 900; text-align: center;">
+              🤖 <span style="background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Naia-Care:</span> Intelligente Geräte-Pflege
+            </h2>
+            <p style="font-size: 1.2em; color: #555; text-align: center; margin-bottom: 40px; line-height: 1.8;">
+              Unser KI-gestütztes System erinnert dich an Wartungsarbeiten, <strong>bevor deine Maschine kaputt geht</strong>. Das spart dir Geld – und der Umwelt Elektroschrott.
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 40px;">
+              <!-- Smart Reminders -->
+              <div style="background: white; padding: 35px; border-radius: 16px; border: 2px solid #daf0e3; box-shadow: 0 8px 24px rgba(102, 187, 106, 0.1);">
+                <div style="font-size: 2.5em; margin-bottom: 15px;">📲</div>
+                <h3 style="color: #1e3c72; font-weight: 800; margin-bottom: 12px; font-size: 1.3em;">Smart Reminders</h3>
+                <p style="color: #666; margin-bottom: 15px; font-weight: 500;">Proaktive Benachrichtigungen:</p>
+                <ul style="list-style: none; padding: 0; margin: 0; color: #555; font-size: 0.95em; line-height: 2.2;">
+                  <li style="display: flex; align-items: center; gap: 12px; padding: 6px 0; transition: all 0.3s ease;">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%); color: white; border-radius: 50%; font-weight: bold; font-size: 0.7em; box-shadow: 0 3px 8px rgba(102, 187, 106, 0.25); flex-shrink: 0;">✓</span>
+                    Flusensieb-Reinigung überfällig?
+                  </li>
+                  <li style="display: flex; align-items: center; gap: 12px; padding: 6px 0; transition: all 0.3s ease;">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%); color: white; border-radius: 50%; font-weight: bold; font-size: 0.7em; box-shadow: 0 3px 8px rgba(102, 187, 106, 0.25); flex-shrink: 0;">✓</span>
+                    Entkalker-Zeit? Wir helfen!
+                  </li>
+                  <li style="display: flex; align-items: center; gap: 12px; padding: 6px 0; transition: all 0.3s ease;">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%); color: white; border-radius: 50%; font-weight: bold; font-size: 0.7em; box-shadow: 0 3px 8px rgba(102, 187, 106, 0.25); flex-shrink: 0;">✓</span>
+                    Maschine läuft zu lange?
+                  </li>
+                </ul>
+              </div>
+
+              <!-- AI Troubleshooting -->
+              <div style="background: white; padding: 35px; border-radius: 16px; border: 2px solid #daf0e3; box-shadow: 0 8px 24px rgba(102, 187, 106, 0.1);">
+                <div style="font-size: 2.5em; margin-bottom: 15px;">🔧</div>
+                <h3 style="color: #1e3c72; font-weight: 800; margin-bottom: 12px; font-size: 1.3em;">AI Troubleshooting</h3>
+                <p style="color: #666; margin-bottom: 15px; font-weight: 500;">Probleme selbst lösen:</p>
+                <ul style="list-style: none; padding: 0; margin: 0; color: #555; font-size: 0.95em; line-height: 2.2;">
+                  <li style="display: flex; align-items: center; gap: 12px; padding: 6px 0; transition: all 0.3s ease;">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%); color: white; border-radius: 50%; font-weight: bold; font-size: 0.7em; box-shadow: 0 3px 8px rgba(102, 187, 106, 0.25); flex-shrink: 0;">✓</span>
+                    Foto des Fehlercodes machen
+                  </li>
+                  <li style="display: flex; align-items: center; gap: 12px; padding: 6px 0; transition: all 0.3s ease;">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%); color: white; border-radius: 50%; font-weight: bold; font-size: 0.7em; box-shadow: 0 3px 8px rgba(102, 187, 106, 0.25); flex-shrink: 0;">✓</span>
+                    AI erkennt das Problem
+                  </li>
+                  <li style="display: flex; align-items: center; gap: 12px; padding: 6px 0; transition: all 0.3s ease;">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%); color: white; border-radius: 50%; font-weight: bold; font-size: 0.7em; box-shadow: 0 3px 8px rgba(102, 187, 106, 0.25); flex-shrink: 0;">✓</span>
+                    Video-Anleitung statt Techniker
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div style="background: rgba(255, 193, 7, 0.08); padding: 30px; border-radius: 16px; border-left: 5px solid #ffc107; text-align: center;">
+              <p style="font-size: 1.1em; color: #1e3c72; margin: 0; font-weight: 600;">
+                💡 <strong>Naia-Care löst 80% aller Probleme ohne Techniker-Einsatz</strong> – das spart Zeit & Elektroschrott!
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Kreislaufwirtschaft Section -->
+        <section id="circular-economy" style="margin-top: 60px; padding: 60px; background: linear-gradient(135deg, #f3f0ff 0%, #ede7ff 100%); border-radius: 32px; border-left: 8px solid #7c3aed; box-shadow: 0 15px 50px rgba(124, 58, 237, 0.15);">
+          <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="font-size: 2.8em; color: #1e3c72; margin-bottom: 15px; font-weight: 900; text-align: center;">
+              ♻️ <span style="background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Naia's 3-Phasen-Kaskadennutzung</span>
+            </h2>
+            <p style="font-size: 1.1em; color: #555; text-align: center; margin-bottom: 45px; line-height: 1.8;">
+              Jede Maschine durchläuft einen Lebenszyklus bei Naia – von Premium über Basic bis Sparfuchs. Dann wird sie recycelt.
+            </p>
+
+            <!-- 3-Phasen Flow Diagram -->
+            <div style="background: white; padding: 40px; border-radius: 24px; box-shadow: 0 10px 40px rgba(124, 58, 237, 0.15); margin-bottom: 40px; position: relative;">
+              
+              <!-- Phase Cards mit Connecting Line -->
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; position: relative; margin-bottom: 30px;">
+                
+                <!-- Connecting Line Background -->
+                <div style="position: absolute; top: 60px; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #2196f3 0%, #2196f3 33%, #ff9800 33%, #ff9800 66%, #66bb6a 66%, #66bb6a 100%); border-radius: 2px; pointer-events: none; z-index: 0;"></div>
+
+                <!-- Phase 1: Premium -->
+                <div style="display: flex; flex-direction: column; align-items: center; position: relative; z-index: 1;">
+                  <div style="background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%); color: white; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8em; font-weight: 900; box-shadow: 0 8px 24px rgba(33, 150, 243, 0.3); margin-bottom: 20px;">1</div>
+                  <h3 style="color: #1e3c72; font-weight: 900; margin: 0 0 12px 0; font-size: 1.4em; text-align: center;">Premium<br>Segment</h3>
+                  <div style="background: linear-gradient(135deg, #e3f2fd 0%, #e0ebff 100%); padding: 20px; border-radius: 14px; border-left: 5px solid #2196f3; text-align: center; width: 100%;">
+                    <p style="color: #666; font-size: 0.9em; margin: 0 0 10px 0; line-height: 1.6;">
+                      <strong>Energieklasse A++</strong><br>
+                      Neue oder junge Geräte
+                    </p>
+                    <p style="color: #1e3c72; font-weight: 800; font-size: 1.3em; margin: 0;">49,90€/Monat</p>
+                  </div>
+                </div>
+
+                <!-- Phase 2: Basic -->
+                <div style="display: flex; flex-direction: column; align-items: center; position: relative; z-index: 1;">
+                  <div style="background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); color: white; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8em; font-weight: 900; box-shadow: 0 8px 24px rgba(255, 152, 0, 0.3); margin-bottom: 20px;">2</div>
+                  <h3 style="color: #1e3c72; font-weight: 900; margin: 0 0 12px 0; font-size: 1.4em; text-align: center;">Basic<br>Segment</h3>
+                  <div style="background: linear-gradient(135deg, #fff8f0 0%, #ffe8cc 100%); padding: 20px; border-radius: 14px; border-left: 5px solid #ff9800; text-align: center; width: 100%;">
+                    <p style="color: #666; font-size: 0.9em; margin: 0 0 10px 0; line-height: 1.6;">
+                      <strong>Optische Mängel</strong><br>
+                      Gleiche Leistung wie Phase 1
+                    </p>
+                    <p style="color: #1e3c72; font-weight: 800; font-size: 1.3em; margin: 0;">24,90€/Monat</p>
+                  </div>
+                </div>
+
+                <!-- Phase 3: Sparfuchs -->
+                <div style="display: flex; flex-direction: column; align-items: center; position: relative; z-index: 1;">
+                  <div style="background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%); color: white; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8em; font-weight: 900; box-shadow: 0 8px 24px rgba(102, 187, 106, 0.3); margin-bottom: 20px;">3</div>
+                  <h3 style="color: #1e3c72; font-weight: 900; margin: 0 0 12px 0; font-size: 1.4em; text-align: center;">Sparfuchs<br>Segment</h3>
+                  <div style="background: linear-gradient(135deg, #f2fdf5 0%, #daf0e3 100%); padding: 20px; border-radius: 14px; border-left: 5px solid #66bb6a; text-align: center; width: 100%;">
+                    <p style="color: #666; font-size: 0.9em; margin: 0 0 10px 0; line-height: 1.6;">
+                      <strong>Ältere Geräte</strong><br>
+                      Intensiv gepflegt (Naia-Care)
+                    </p>
+                    <p style="color: #1e3c72; font-weight: 800; font-size: 1.3em; margin: 0;">14,90€/Monat</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Impact Cards -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;">
+              <div style="background: white; padding: 30px; border-radius: 16px; border: 2px solid #e9d5ff; box-shadow: 0 8px 24px rgba(124, 58, 237, 0.1);">
+                <div style="font-size: 2.5em; margin-bottom: 15px;">📊</div>
+                <h3 style="color: #1e3c72; font-weight: 800; margin-bottom: 12px;">Impact-Rechnung</h3>
+                <p style="color: #666; font-size: 0.95em; margin-bottom: 15px; font-weight: 500;">Pro Naia-Maschine:</p>
+                <ul style="list-style: none; padding: 0; margin: 0; color: #555; font-size: 0.95em; line-height: 2.2;">
+                  <li style="display: flex; align-items: center; gap: 12px; padding: 6px 0; transition: all 0.3s ease;">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); color: white; border-radius: 50%; font-weight: bold; font-size: 0.7em; box-shadow: 0 3px 8px rgba(124, 58, 237, 0.25); flex-shrink: 0;">✓</span>
+                    Ersetzt 1,5-2 Neugeräte
+                  </li>
+                  <li style="display: flex; align-items: center; gap: 12px; padding: 6px 0; transition: all 0.3s ease;">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); color: white; border-radius: 50%; font-weight: bold; font-size: 0.7em; box-shadow: 0 3px 8px rgba(124, 58, 237, 0.25); flex-shrink: 0;">✓</span>
+                    500-700 kg CO₂ gespart
+                  </li>
+                  <li style="display: flex; align-items: center; gap: 12px; padding: 6px 0; transition: all 0.3s ease;">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); color: white; border-radius: 50%; font-weight: bold; font-size: 0.7em; box-shadow: 0 3px 8px rgba(124, 58, 237, 0.25); flex-shrink: 0;">✓</span>
+                    ~12.000 Liter Wasser gespart
+                  </li>
+                  <li style="display: flex; align-items: center; gap: 12px; padding: 6px 0; transition: all 0.3s ease;">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); color: white; border-radius: 50%; font-weight: bold; font-size: 0.7em; box-shadow: 0 3px 8px rgba(124, 58, 237, 0.25); flex-shrink: 0;">✓</span>
+                    4-5 Jahre länger genutzt
+                  </li>
+                </ul>
+              </div>
+
+              <div style="background: white; padding: 30px; border-radius: 16px; border: 2px solid #e9d5ff; box-shadow: 0 8px 24px rgba(124, 58, 237, 0.1);">
+                <div style="font-size: 2.5em; margin-bottom: 15px;">♻️</div>
+                <h3 style="color: #1e3c72; font-weight: 800; margin-bottom: 12px;">End-of-Life Recycling</h3>
+                <p style="color: #666; font-size: 0.95em; margin-bottom: 15px; font-weight: 500;">Keine Maschine im Müll:</p>
+                <ul style="list-style: none; padding: 0; margin: 0; color: #555; font-size: 0.95em; line-height: 2.2;">
+                  <li style="display: flex; align-items: center; gap: 12px; padding: 6px 0; transition: all 0.3s ease;">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); color: white; border-radius: 50%; font-weight: bold; font-size: 0.7em; box-shadow: 0 3px 8px rgba(124, 58, 237, 0.25); flex-shrink: 0;">✓</span>
+                    Kupfer & Edelstahl recycelt
+                  </li>
+                  <li style="display: flex; align-items: center; gap: 12px; padding: 6px 0; transition: all 0.3s ease;">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); color: white; border-radius: 50%; font-weight: bold; font-size: 0.7em; box-shadow: 0 3px 8px rgba(124, 58, 237, 0.25); flex-shrink: 0;">✓</span>
+                    Kunststoffe recycelt
+                  </li>
+                  <li style="display: flex; align-items: center; gap: 12px; padding: 6px 0; transition: all 0.3s ease;">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); color: white; border-radius: 50%; font-weight: bold; font-size: 0.7em; box-shadow: 0 3px 8px rgba(124, 58, 237, 0.25); flex-shrink: 0;">✓</span>
+                    Transparenz per QR-Code
+                  </li>
                 </ul>
               </div>
             </div>
@@ -1584,13 +1992,12 @@
           <div class="pricing-wrapper">
             <div class="features-header">
               <h2>
-                <span class="highlight">Komplett versorgt.</span> Keine
-                Zusatzkosten.
+                <span class="highlight">Komplett versorgt.</span> Nachhaltig.
               </h2>
               <div class="features-icons">
                 <span>🚚 Lieferung & Anschluss</span>
-                <span>⏱ 24h Austausch</span>
-                <span>📄 Monatlich kündbar</span>
+                <span>🤖 Naia-Care Wartung</span>
+                <span>♻️ Kreislaufwirtschaft</span>
               </div>
             </div>
 
@@ -1681,22 +2088,35 @@
             Melde dich an, um den <span class="highlight">Launch</span> nicht zu verpassen und profitiere von <span class="highlight">folgenden Vorteilen:</span>
           </p>
 
-          <!-- Availability Info -->
-          <div class="offer-card">
-            <div class="offer-list">
-              <div class="item">
-                <span class="offer-icon">✓</span>
-                <div>
-                  <strong class="offer-title">Lieferung</strong><br />
-                  <span class="offer-sub">zu Ihrem Wunschtermin</span>
+          <!-- Early Adopter Benefits -->
+          <div style="background: linear-gradient(135deg, #faf5ff 0%, #f5f3ff 100%); padding: 30px; border-radius: 20px; border: 2px solid #e9d5ff; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(124, 58, 237, 0.12);">
+            <div style="display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap;">
+              <div style="flex: 1; min-width: 180px; display: flex; align-items: center; gap: 12px; padding: 15px 18px; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.06);">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); color: white; border-radius: 50%; font-weight: bold; font-size: 0.75em; box-shadow: 0 3px 8px rgba(124, 58, 237, 0.3); flex-shrink: 0;">✓</span>
+                <div style="line-height: 1.3;">
+                  <strong style="color: #1e3c72; font-size: 0.9em; display: block;">Lieferung & Anschluss</strong>
+                  <span style="color: #666; font-size: 0.8em;">zum Wunschtermin</span>
                 </div>
               </div>
-              <div class="item">
-                <span class="offer-icon">✓</span>
-                <div>
-                  <strong class="offer-title">Kostenlos Öko-Waschmittel</strong
-                  ><br />
-                  <span class="offer-sub">für die ersten 6 Monate</span>
+              <div style="flex: 1; min-width: 180px; display: flex; align-items: center; gap: 12px; padding: 15px 18px; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(102, 187, 106, 0.06);">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%); color: white; border-radius: 50%; font-weight: bold; font-size: 0.75em; box-shadow: 0 3px 8px rgba(102, 187, 106, 0.3); flex-shrink: 0;">✓</span>
+                <div style="line-height: 1.3;">
+                  <strong style="color: #1e3c72; font-size: 0.9em; display: block;">Öko-Waschmittel</strong>
+                  <span style="color: #666; font-size: 0.8em;">6 Monate gratis</span>
+                </div>
+              </div>
+              <div style="flex: 1; min-width: 180px; display: flex; align-items: center; gap: 12px; padding: 15px 18px; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.06);">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: linear-gradient(135deg, #3b82f6 0%, #2196f3 100%); color: white; border-radius: 50%; font-weight: bold; font-size: 0.75em; box-shadow: 0 3px 8px rgba(59, 130, 246, 0.3); flex-shrink: 0;">✓</span>
+                <div style="line-height: 1.3;">
+                  <strong style="color: #1e3c72; font-size: 0.9em; display: block;">Naia-Care App</strong>
+                  <span style="color: #666; font-size: 0.8em;">KI-Wartungsassistent</span>
+                </div>
+              </div>
+              <div style="flex: 1; min-width: 180px; display: flex; align-items: center; gap: 12px; padding: 15px 18px; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(255, 152, 0, 0.06);">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); color: white; border-radius: 50%; font-weight: bold; font-size: 0.75em; box-shadow: 0 3px 8px rgba(255, 152, 0, 0.3); flex-shrink: 0;">✓</span>
+                <div style="line-height: 1.3;">
+                  <strong style="color: #1e3c72; font-size: 0.9em; display: block;">Impact-Tracking</strong>
+                  <span style="color: #666; font-size: 0.8em;">Deine CO₂-Ersparnis</span>
                 </div>
               </div>
             </div>
